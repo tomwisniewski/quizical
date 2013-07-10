@@ -50,5 +50,6 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'capybara'
   gem 'database_cleaner'
+  gem 'selenium-webdriver'
   gem 'pry'
 end

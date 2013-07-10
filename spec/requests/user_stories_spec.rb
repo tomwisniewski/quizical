@@ -1,11 +1,11 @@
 require 'spec_helper'
+require 'capybara/rails'
 
-describe "UserStories" do
-  describe "GET /user_stories" do
+describe "UserStories", :type => :feature, :js => true do
+  describe "GET /users", :type => :feature, :js => true do
     it "works! (now write some real specs)" do
-      # Run the generator again with the --webrat flag if you want to use webrat methods/matchers
-      get user_stories_index_path
-      response.status.should be(200)
+      visit '/users'
+      expect(page).to have_content 'Users#index'
     end
   end
 end
