@@ -1,8 +1,11 @@
 Quizical::Application.routes.draw do
 
+  root 'users#new'
+
   resources :users
   resources :questions#, except: [:destroy]
-  resources :sessions, only: [:new, :create, :destroy]
+  resources :sessions, only: [:new, :create]
+  delete '/logout' => 'sessions#destroy', as: :logout
   resources :games, only: [:index, :create, :show]
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -23,12 +26,12 @@ Quizical::Application.routes.draw do
   # Example resource route with options:
   #   resources :products do
   #     member do
-  #       get 'short'
+  #       get 'short' #=> /product/:id/short
   #       post 'toggle'
   #     end
   #
   #     collection do
-  #       get 'sold'
+  #       get 'sold' # =>  /products/sold
   #     end
   #   end
 

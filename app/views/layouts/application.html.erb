@@ -7,6 +7,23 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <nav>
+    <% if session[:user_id] %>
+      <li><%= link_to 'Log In', new_session_path %></li> 
+    <% else %>
+      <li><%= link_to 'Log Out', logout_path, :method => :delete %></li> 
+    <% end %>
+
+
+  </nav>
+  <div id="flash-messages">
+    <% if flash[:error] %>
+        <p class='error'><%= flash[:error] %></p>
+    <% end %>
+    <% if flash[:notice] %>
+        <p class='notice'><%= flash[:notice] %></p>
+    <% end %>
+  </div>
 
 <%= yield %>
 
