@@ -7,6 +7,12 @@ class QuestionsController < ApplicationController
   end
 
   def create
+    q = Question.new
+    q.user_id = session[:user_id]
+    q.text = params[:question][:text]
+    q.answer = params[:question][:answer]
+    q.category = params[:question][:category]
+
   end
 
   def show
