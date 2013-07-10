@@ -33,21 +33,21 @@ feature "visitor signs up" do
     visit '/'
     within '#signup' do
       fill_in 'Username', :with => "TomWissy"
-      fill_in 'Email', :with => "invalidemail"
-      fill_in 'Password', :with => "short"
-      fill_in 'Password Confirmation', :with => "nonmatchingconfirmation"
+      fill_in 'Email', :with => "tom@gmail.com"
+      fill_in 'Password', :with => "password"
+      fill_in 'Password Confirmation', :with => "password"
       click_button 'Sign Up'
     end
     click_link "Log Out"
     within '#signup' do
       fill_in 'Username', :with => "TomWissy"
-      fill_in 'Email', :with => "invalidemail"
-      fill_in 'Password', :with => "short"
-      fill_in 'Password Confirmation', :with => "nonmatchingconfirmation"
+      fill_in 'Email', :with => "tom@gmail.com"
+      fill_in 'Password', :with => "password"
+      fill_in 'Password Confirmation', :with => "password"
       click_button 'Sign Up'
     end
-    expect(page).to have_content("Username already taken")
-    expect(page).to have_content("Email already taken")
+    expect(page).to have_content("Username has already been taken")
+    expect(page).to have_content("Email has already been taken")
   end   
 
   scenario "with no details given" do
@@ -74,6 +74,7 @@ feature "User logs in" do
       click_button 'Sign Up'
     end
     click_link 'Log Out'
+    click_link 'Log In'
     within '#login' do
       fill_in 'Email', :with => "tom@gmail.com"
       fill_in 'Password', :with => "Password"
@@ -92,6 +93,7 @@ feature "User logs in" do
       click_button 'Sign Up'
     end
     click_link 'Log Out'
+    click_link 'Log In'
     within '#login' do
       fill_in 'Email', :with => "tom@gmail.com"
       fill_in 'Password', :with => "Pissyword"
