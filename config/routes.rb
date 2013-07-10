@@ -1,4 +1,10 @@
 Quizical::Application.routes.draw do
+
+  resources :users
+  resources :questions#, except: [:destroy]
+  resources :sessions, only: [:new, :create, :destroy]
+  resources :games, only: [:index, :create, :show]
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
