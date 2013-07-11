@@ -10,7 +10,7 @@ feature "visitor signs up" do
       fill_in 'Email', :with => "tom@gmail.com"
       fill_in 'Password', :with => "Password"
       fill_in 'Password Confirmation', :with => "Password"
-      click_button 'Sign Up'
+      click_button 'Submit'
     end
     expect(page).to have_content("TomWissy") # user is logged in after signup
   end
@@ -22,7 +22,7 @@ feature "visitor signs up" do
       fill_in 'Email', :with => "invalidemail"
       fill_in 'Password', :with => "short"
       fill_in 'Password Confirmation', :with => "nonmatchingconfirmation"
-      click_button 'Sign Up'
+      click_button 'Submit'
     end
     expect(page).to have_content("Password confirmation doesn't match Password")
     expect(page).to have_content("Email is invalid")
@@ -36,7 +36,7 @@ feature "visitor signs up" do
       fill_in 'Email', :with => "tom@gmail.com"
       fill_in 'Password', :with => "password"
       fill_in 'Password Confirmation', :with => "password"
-      click_button 'Sign Up'
+      click_button 'Submit'
     end
     click_link "Log Out"
     within '#signup' do
@@ -44,7 +44,7 @@ feature "visitor signs up" do
       fill_in 'Email', :with => "tom@gmail.com"
       fill_in 'Password', :with => "password"
       fill_in 'Password Confirmation', :with => "password"
-      click_button 'Sign Up'
+      click_button 'Submit'
     end
     expect(page).to have_content("Username has already been taken")
     expect(page).to have_content("Email has already been taken")
@@ -53,7 +53,7 @@ feature "visitor signs up" do
   scenario "with no details given" do
     visit '/'
     within '#signup' do
-      click_button 'Sign Up'
+      click_button 'Submit'
     end
     expect(page).to have_content("Password can't be blank")
     expect(page).to have_content("Email is invalid")
@@ -71,7 +71,7 @@ feature "User logs outs" do
       fill_in 'Email', :with => "tom@gmail.com"
       fill_in 'Password', :with => "Password"
       fill_in 'Password Confirmation', :with => "Password"
-      click_button 'Sign Up'
+      click_button 'Submit'
     end
     click_link 'Log Out'
     expect(page).to have_content("Log out successful.")
@@ -87,7 +87,7 @@ feature "User logs in" do
       fill_in 'Email', :with => "tom@gmail.com"
       fill_in 'Password', :with => "Password"
       fill_in 'Password Confirmation', :with => "Password"
-      click_button 'Sign Up'
+      click_button 'Submit'
     end
     click_link 'Log Out'
   end
@@ -124,7 +124,7 @@ feature "User views Leaderboard" do
       fill_in 'Email', :with => "tom@gmail.com"
       fill_in 'Password', :with => "Password"
       fill_in 'Password Confirmation', :with => "Password"
-      click_button 'Sign Up'
+      click_button 'Submit'
     end
     click_link 'Log Out'
     visit '/'
@@ -133,7 +133,7 @@ feature "User views Leaderboard" do
       fill_in 'Email', :with => "neil@gmail.com"
       fill_in 'Password', :with => "Password"
       fill_in 'Password Confirmation', :with => "Password"
-      click_button 'Sign Up'
+      click_button 'Submit'
     end
   end
 
@@ -143,3 +143,51 @@ feature "User views Leaderboard" do
     expect(page).to have_content("NeilAtkins")
   end
 end
+
+feature "User can view their details" do
+  before(:each) do
+    visit '/'
+    within '#signup' do
+      fill_in 'Username', :with => "TomWissy"
+      fill_in 'Email', :with => "tom@gmail.com"
+      fill_in 'Password', :with => "Password"
+      fill_in 'Password Confirmation', :with => "Password"
+      click_button 'Submit'
+    end
+  end
+
+  scenario "when logged in" do
+    expect(page).to have_content("TomWissy")
+    expect(page).to have_content("tom@gmail.com")
+    expect(page).to have_content("Created at")
+    expect(page).to have_content("Updated at")
+    expect(page).to have_content("Games played")
+    expect(page).to have_content("Correct answers")
+  end  
+end
+
+feature "User can edit their details" do
+  before(:each) do
+    visit '/'
+    within '#signup' do
+      fill_in 'Username', :with => "TomWissy"
+      fill_in 'Email', :with => "tom@gmail.com"
+      fill_in 'Password', :with => "Password"
+      fill_in 'Password Confirmation', :with => "Password"
+      click_button 'Submit'
+    end
+  end
+
+  scenario "when logged in" do
+    expect(page).to have_content("TomWissy")
+    expect(page).to have_content("tom@gmail.com")
+    click_link 'Edit Details'
+    fill_in 'Email', :with => "neil@gmail.com"
+    fill_in 'Password', :with => "Pissyword"
+    fill_in 'Password Confirmation', :with => "Pissyword"
+    
+    click_button "Submit"
+    expect(page).to have_content("Details updated successfully")
+  end  
+end
+

@@ -10,7 +10,8 @@ class User < ActiveRecord::Base
                       :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, 
                       :on => :create
   validates_length_of :password, :in => 7..15, :on => :create
+  validates_length_of :password, :in => 7..15, :allow_blank => true, :on => :update
 
-  default_scope order('created_at DESC')
-  
+  default_scope order('created_at ASC')
+
 end

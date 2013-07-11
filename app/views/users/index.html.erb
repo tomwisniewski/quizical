@@ -9,6 +9,7 @@
     <th>Games played</th>
     <th>Correct answers</th>
     <th></th>
+    <th></th>
   </tr>
 </thead>
 <tbody>
@@ -16,10 +17,11 @@
     <% @users.each do |user| %>
       <tr>
         <td><%= user.username %></td>
-        <td><%= user.created_at.strftime('%d-%m-%Y') %></td>
+        <td><%= user.created_at.strftime('%d-%m-%Y %H:%M') %></td>
         <td><%= "?" %></td>
         <td><%= "?" %></td>
-        <td><%= "?" %></td>
+        <td><%= link_to "Edit", edit_user_path(user) %></td>
+        <td><%= link_to "Delete", user, method: :delete  %>  </td>
       </tr>
     <% end %>
   <% end %>
