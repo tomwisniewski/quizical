@@ -1,4 +1,3 @@
-require 'debugger'
 class QuestionsController < ApplicationController
 
   def index
@@ -33,6 +32,13 @@ class QuestionsController < ApplicationController
   end
 
   def edit
+
+  end
+
+  def destroy
+  d = Question.find_by(:user_id => session[:user_id], :id => params[:id])
+  d.destroy #Question.destroy(:user_id => session[:user_id], :id => params[:id])
+  redirect_to questions_url, notice: "You have successfully deleted the question "  
   end
 
 
