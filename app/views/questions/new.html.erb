@@ -1,1 +1,21 @@
-Questions#new
+
+  <div id="add_question" >
+    <h4>Create a new user</h4>
+    <%= form_for :question, :url => questions_url do |f| %>
+      <fieldset>
+        <%= f.label "Question Statement", :text, class: "label-width"%>
+        <%= f.text_field :text %><br />
+        
+        <%= f.label(:answer, "True") %>
+        <%= radio_button(:question, "answer", true) %>
+        
+        <%= f.label(:answer, "False") %>
+        <%= radio_button(:question, "answer", false) %>      
+        
+        <%= f.label :category, class: "label-width" %>
+        <%= f.text_field :category %><br />
+        
+        <%= f.submit :value => "Submit"%>
+      </fieldset>
+    <% end %>
+  </div>

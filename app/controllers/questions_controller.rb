@@ -1,7 +1,8 @@
+require 'debugger'
 class QuestionsController < ApplicationController
 
   def index
-    @questions = Question.find_by_user_id(session[:user_id])
+    @q = Question.find(params[:id])
   end
 
   def new
@@ -9,16 +10,15 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    q = Question.new
+    q = Question.new()
     q.user_id = session[:user_id]
     q.text = params[:question][:text]
     q.answer = params[:question][:answer]
     q.category = params[:question][:category]
-    if q.valid?
-      q.save
-      redirect_to "questions#index"
+    if q.save
+      redirect_to questions_url
     else
-      redirect_to "#", notice: q.valid?.errors.full_messages
+      redirect_to "#", notice: q.errors.full_messages
     end
   end
 
