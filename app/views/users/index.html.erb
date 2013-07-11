@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <h1>Your Questions</h1>
 
   <% if @questions.count == 0 %>
@@ -12,3 +13,31 @@
       </div>
     <% end %>  
   <% end %>
+=======
+<h2>Leaderboard</h2>
+
+<table>
+<thead>
+  <tr>
+    <th>Username</th>
+    <th>Date joined</th>
+    <th>Games played</th>
+    <th>Correct answers</th>
+    <th></th>
+  </tr>
+</thead>
+<tbody>
+  <% unless @users.nil? %>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.username %></td>
+        <td><%= user.created_at.strftime('%d-%m-%Y') %></td>
+        <td><%= "?" %></td>
+        <td><%= "?" %></td>
+        <td><%= "?" %></td>
+      </tr>
+    <% end %>
+  <% end %>
+  </tbody>
+</table>
+>>>>>>> 4eb007ffa8839ae75c92ff506f1325c51e5b11bc

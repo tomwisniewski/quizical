@@ -1,12 +1,28 @@
 class UsersController < ApplicationController
 
   def index
+    @users = User.all
   end
 
   def new
   end
 
   def create
+    @user = User.new({
+      :username => params[:user][:username],
+      :email => params[:user][:email],
+      :password => params[:user][:password],
+      :password_confirmation => params[:user][:password_confirmation]
+    })
+
+    if @user.valid?
+      @user.save
+      session[:user_id] = @user.id
+      flash[:notice] = "Hello #{@user.username}, welcome to Quizical!"
+      redirect_to user_path(@user)
+    else
+      render :new
+    end
   end
 
   def show
