@@ -5,6 +5,7 @@ class UsersController < ApplicationController
   end
 
   def new
+    @user = User.new
   end
 
   def create
@@ -26,15 +27,34 @@ class UsersController < ApplicationController
   end
 
   def show
+    @user = User.find(params[:id])
   end
 
   def update
+    @user = User.find(params[:id])
+    @user.username = params[:user][:username]
+    @user.email = params[:user][:email]
+    if params[:user][:password] != ""
+      @user.password = params[:user][:password]
+      @user.password_confirmation = params[:user][:password_confirmation]
+    end
+    if @user.save
+      flash[:notice] = "Details updated successfully"
+      redirect_to user_path(@user)
+    else
+      render :edit
+    end
   end
 
   def edit
+    @user = User.find(params[:id])
   end
 
   def destroy
+    @user = User.find(params[:id])
+    flash[:notice] = "#{@user.username} deleted."
+    @user.destroy
+    redirect_to users_path
   end
 
 end

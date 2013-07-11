@@ -1,20 +1,2 @@
-<%= form_for(:user, :url => users_path, :html => { :id => "signup" }) do |f|  %>
-  <h2>Sign Up</h2>
-  <%= render 'error_messages', object: @user %> 
-  <%= f.label(:username, 'Username', :class => "label_width")%>
-  <%= f.text_field(:username) %> 
-  
-  <%= f.label(:email, "Email", :class => "label_width") %>
-  <%= f.text_field(:email) %>
-
-  <%= f.label(:password, "Password", :class => "label_width") %>
-  <%= f.password_field(:password) %>
-
-  <%= f.label(:password_confirmation, "Password Confirmation", :class => "label_width") %>
-  <%= f.password_field(:password_confirmation) %>
-  
-  <div class="submit">
-    <%= f.submit("Sign Up", :class => "button") %>
-  </div>
-    
-<% end %>
+<h2>Sign Up</h2>
+<%= render 'user_form' %>
