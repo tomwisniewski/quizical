@@ -1,15 +1,20 @@
 <h1>Your Questions</h1>
 
-  <%= link_to "Add a new question", new_question_url, class: "button" %>
-  </br>
-  </br>
-  <% if @q == nil %>
-    <p>You have not created any questions</p>
-  <% else %>
-      <div id=<%= @q.id.to_s %> class="question">
-        Question: <%= @q.text %>
-        </br>
-        Answer: <%= @q.answer %>
-        </hr>
-      </div>
+<%= link_to "Add a new question", new_question_url, class: "button" %>
+</br>
+</br>
+<% if @questions == nil %>
+  <p>You have not created any questions</p>
+<% else %>
+  <% @questions.each do | q | %>
+    <div id=<%= q.id.to_s %> class="question">
+      Question: <%= q.text %>
+      </br>
+      Answer: <%= q.answer %>
+      </hr>
+    </div>
   <% end %>
+<% end %>
+
+
+

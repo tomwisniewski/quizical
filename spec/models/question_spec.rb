@@ -34,14 +34,5 @@ describe Question do
     question.valid?.should be false
   end
 
-  it 'should be true when "true" is passed in as string' do
-    question = Question.new(user_id: 1, category: "Food & Wine", text: "A morbier is a type of cheese", answer: Question.trueorfalse?("true"))
-    question.valid?.should be true
-  end
-
-  it 'should be false when "false" is passed in as string' do
-    question = Question.new(user_id: 1, category: "Food & Wine", text: "A morbier is a type of cheese", answer: Question.trueorfalse?("false"))
-    question.valid?.should be true
-  end
 
 end

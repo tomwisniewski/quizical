@@ -2,7 +2,7 @@ require 'debugger'
 class QuestionsController < ApplicationController
 
   def index
-    @q = Question.find_by(user_id: session[:user_id])
+    @questions = Question.where("user_id = #{session[:user_id]}").load 
   end
 
   def new

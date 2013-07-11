@@ -1,10 +1,14 @@
 require 'spec_helper'
 
+
 describe QuestionsController do
 
   describe "GET 'show'" do
     it "returns http success" do
-      get 'show', id: 1
+      session[:user_id] = 4
+      Question.create(user_id: 4, category: "Food & Wine", text: "A brie is a type of cheese", answer: true)
+      id = Question.last.id
+      get 'show', id: id
       response.should be_success
     end
   end

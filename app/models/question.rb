@@ -3,8 +3,4 @@ class Question < ActiveRecord::Base
   validates :category, :text, presence: true
   validates_inclusion_of :answer, :in => [true, false]
 
-  def self.trueorfalse?(var)
-    var == "true" ? true : false
-  end
-
 end
