@@ -11,3 +11,11 @@
  *= require_self
  *= require_tree .
  */
+
+
+.button {
+  border-radius: 5px;
+  border: 1px solid black;
+  background-color: gray;
+
+}

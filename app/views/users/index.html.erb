@@ -1,19 +1,4 @@
-<<<<<<< HEAD
-<h1>Your Questions</h1>
 
-  <% if @questions.count == 0 %>
-    <p>You have not created any questions</p>
-  <% else %>
-    <% @questions.each do | q | %>
-      <div id=<%= q.id.to_s %> class="question">
-        Question: <%= q.text %>
-        </br>
-        Answer: <%= q.answer %>
-        </hr>
-      </div>
-    <% end %>  
-  <% end %>
-=======
 <h2>Leaderboard</h2>
 
 <table>
@@ -40,4 +25,3 @@
   <% end %>
   </tbody>
 </table>
->>>>>>> 4eb007ffa8839ae75c92ff506f1325c51e5b11bc

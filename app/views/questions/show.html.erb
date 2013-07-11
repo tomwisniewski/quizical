@@ -1,4 +1,8 @@
-<h1>Question <%= @q.id %></h1>
+<h1>Question <%= @q.id  %></h1>
+
+  <%= link_to "Add a new question", new_question_url, class: "button" %>
+  </br>
+  </br>
 
   <div id=<%= @q.id.to_s %> class="question">
     Question: <%= @q.text %>
@@ -6,4 +10,3 @@
     Answer: <%= @q.answer %>
     </hr>
   </div>
-  <% end %>

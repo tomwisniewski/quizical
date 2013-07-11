@@ -2,7 +2,7 @@ require 'debugger'
 class QuestionsController < ApplicationController
 
   def index
-    @q = Question.find(params[:id])
+    @q = Question.find_by(user_id: session[:user_id])
   end
 
   def new
@@ -23,7 +23,10 @@ class QuestionsController < ApplicationController
   end
 
   def show
-    @questions = Question.find_by_user_id(session[:user_id])
+    @q= Question.find_by(:user_id => session[:user_id], :id => params[:id])
+    if @q.nil?
+      redirect_to questions_url, notice: "There was a problem with that question. Here are all your questions"  
+    end
   end
 
   def update
