@@ -15,6 +15,7 @@ describe QuestionsController do
 
   describe "GET 'index'" do
     it "returns http success" do
+      session[:user_id] = 1
       get 'index'
       response.should be_success
     end
