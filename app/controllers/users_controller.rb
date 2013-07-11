@@ -1,4 +1,7 @@
+
+
 class UsersController < ApplicationController
+  include UsersHelper
 
   def index
     @users = User.all
@@ -6,6 +9,9 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
+    if signed_in?
+      redirect_to action: 'show', :id => session[:user_id]
+    end  
   end
 
   def create

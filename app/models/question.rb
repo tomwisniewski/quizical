@@ -3,4 +3,8 @@ class Question < ActiveRecord::Base
   validates :category, :text, presence: true
   validates_inclusion_of :answer, :in => [true, false]
 
+  def self.pick
+    Question.first
+  end
+
 end

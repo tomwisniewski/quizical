@@ -114,6 +114,24 @@ feature "User logs in" do
 
 end
 
+feature "User visits the home page" do
+  before(:each) do
+    visit '/'
+    within '#signup' do
+      fill_in 'Username', :with => "TomWissy"
+      fill_in 'Email', :with => "tom@gmail.com"
+      fill_in 'Password', :with => "Password"
+      fill_in 'Password Confirmation', :with => "Password"
+      click_button 'Submit'
+    end
+  end
+
+  scenario "when logged in" do
+    visit '/'
+    expect(page).to have_content("TomWissy") # user gets redirected to their home page
+  end
+end
+
 
 feature "User views Leaderboard" do
 
@@ -230,5 +248,44 @@ feature "User can add questions" do
     click_button "Submit"
     expect(page).to have_content("Your Questions")
     expect(page).to have_content("These tests are awesome?")
+  end
+end
+
+feature "Logged in user starts a new game" do
+  
+  before(:each) do
+    visit '/'
+    within '#signup' do
+      fill_in 'Username', :with => "TomWissy"
+      fill_in 'Email', :with => "tom@gmail.com"
+      fill_in 'Password', :with => "Password"
+      fill_in 'Password Confirmation', :with => "Password"
+      click_button 'Submit'
+    end
+    click_link "My Questions"
+
+    click_link "Add a new question"
+    fill_in "Question Statement", :with => "Select true or false q1"
+    choose "True"
+    fill_in "Category", :with => "General"
+    click_button "Submit"
+    
+    click_link "Add a new question"
+    fill_in "Question Statement", :with => "Select true or false q2"
+    choose "false"
+    fill_in "Category", :with => "General"
+    click_button "Submit"
+  end
+  
+  scenario "with two questions" do
+    click_link "New Game"
+    expect(page).to have_content("Question 1")
+    choose "True"
+    click_link "Next"
+    expect(page).to have_content("Question 2")
+    choose "True"
+    click_link "Next"
+    # expect(page).to have_content("Game Over")
+    # expect(page).to have_content("Score")
   end
 end
