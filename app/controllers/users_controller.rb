@@ -1,10 +1,10 @@
 class UsersController < ApplicationController
 
   def index
+    @users = User.all
   end
 
-  def new  
-
+  def new
   end
 
   def create
@@ -35,7 +35,6 @@ class UsersController < ApplicationController
   end
 
   def destroy
-  
   end
 
 end

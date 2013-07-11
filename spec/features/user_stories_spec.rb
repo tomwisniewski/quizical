@@ -63,8 +63,8 @@ feature "visitor signs up" do
   end
 end
 
-feature "User logs in" do
-  scenario "with valid details" do
+feature "User logs outs" do
+  scenario "when logged in" do
     visit '/'
     within '#signup' do
       fill_in 'Username', :with => "TomWissy"
@@ -74,6 +74,25 @@ feature "User logs in" do
       click_button 'Sign Up'
     end
     click_link 'Log Out'
+    expect(page).to have_content("Log out successful.")
+  end
+end
+
+feature "User logs in" do
+
+  before(:each) do
+    visit '/'
+    within '#signup' do
+      fill_in 'Username', :with => "TomWissy"
+      fill_in 'Email', :with => "tom@gmail.com"
+      fill_in 'Password', :with => "Password"
+      fill_in 'Password Confirmation', :with => "Password"
+      click_button 'Sign Up'
+    end
+    click_link 'Log Out'
+  end
+
+  scenario "with valid details" do
     click_link 'Log In'
     within '#login' do
       fill_in 'Email', :with => "tom@gmail.com"
@@ -84,15 +103,6 @@ feature "User logs in" do
   end
 
   scenario "with invalid details" do
-    visit '/'
-    within '#signup' do
-      fill_in 'Username', :with => "TomWissy"
-      fill_in 'Email', :with => "tom@gmail.com"
-      fill_in 'Password', :with => "Password"
-      fill_in 'Password Confirmation', :with => "Password"
-      click_button 'Sign Up'
-    end
-    click_link 'Log Out'
     click_link 'Log In'
     within '#login' do
       fill_in 'Email', :with => "tom@gmail.com"
@@ -102,4 +112,34 @@ feature "User logs in" do
     expect(page).to have_content("Password and/or email incorrect.")
   end
 
+end
+
+
+feature "User views Leaderboard" do
+
+  before(:each) do
+    visit '/'
+    within '#signup' do
+      fill_in 'Username', :with => "TomWissy"
+      fill_in 'Email', :with => "tom@gmail.com"
+      fill_in 'Password', :with => "Password"
+      fill_in 'Password Confirmation', :with => "Password"
+      click_button 'Sign Up'
+    end
+    click_link 'Log Out'
+    visit '/'
+    within '#signup' do
+      fill_in 'Username', :with => "NeilAtkins"
+      fill_in 'Email', :with => "neil@gmail.com"
+      fill_in 'Password', :with => "Password"
+      fill_in 'Password Confirmation', :with => "Password"
+      click_button 'Sign Up'
+    end
+  end
+
+  scenario "when logged in" do
+    click_link 'View Leaderboard'
+    expect(page).to have_content("TomWissy")
+    expect(page).to have_content("NeilAtkins")
+  end
 end

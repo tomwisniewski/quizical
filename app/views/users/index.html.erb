@@ -1,1 +1,26 @@
-Users#index
+<h2>Leaderboard</h2>
+
+<table>
+<thead>
+  <tr>
+    <th>Username</th>
+    <th>Date joined</th>
+    <th>Games played</th>
+    <th>Correct answers</th>
+    <th></th>
+  </tr>
+</thead>
+<tbody>
+  <% unless @users.nil? %>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.username %></td>
+        <td><%= user.created_at.strftime('%d-%m-%Y') %></td>
+        <td><%= "?" %></td>
+        <td><%= "?" %></td>
+        <td><%= "?" %></td>
+      </tr>
+    <% end %>
+  <% end %>
+  </tbody>
+</table>
