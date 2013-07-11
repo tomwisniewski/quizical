@@ -3,13 +3,13 @@
     <h4>Create a question</h4>
     <%= form_for :question, :url => questions_url do |f| %>
       <fieldset>
-        <%= f.label "Question Statement", :text, class: "label-width"%>
+        <%= f.label :text, "Question Statement", class: "label-width"%>
         <%= f.text_field :text %><br />
         
-        <%= f.label(:answer, "True") %>
+        <%= f.label(:answer_true, "True") %>
         <%= radio_button(:question, "answer", true) %>
         
-        <%= f.label(:answer, "False") %>
+        <%= f.label(:answer_false, "False") %>
         <%= radio_button(:question, "answer", false) %>      
         
         <%= f.label :category, class: "label-width" %>

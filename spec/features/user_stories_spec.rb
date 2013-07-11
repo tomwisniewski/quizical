@@ -191,3 +191,44 @@ feature "User can edit their details" do
   end  
 end
 
+feature "User can view the questions they have created" do
+  before(:each) do
+    visit '/'
+    within '#signup' do
+      fill_in 'Username', :with => "TomWissy"
+      fill_in 'Email', :with => "tom@gmail.com"
+      fill_in 'Password', :with => "Password"
+      fill_in 'Password Confirmation', :with => "Password"
+      click_button 'Submit'
+    end
+  end
+
+  scenario "when logged in" do
+    click_link "My Questions"
+    expect(page).to have_content("Your Questions")
+  end
+end
+
+feature "User can add questions" do
+  before(:each) do
+    visit '/'
+    within '#signup' do
+      fill_in 'Username', :with => "TomWissy"
+      fill_in 'Email', :with => "tom@gmail.com"
+      fill_in 'Password', :with => "Password"
+      fill_in 'Password Confirmation', :with => "Password"
+      click_button 'Submit'
+    end
+  end
+
+  scenario "when logged in" do
+    click_link "My Questions"
+    click_link "Add a new question"
+    fill_in "Question Statement", :with => "These tests are awesome?"
+    choose "True"
+    fill_in "Category", :with => "General"
+    click_button "Submit"
+    expect(page).to have_content("Your Questions")
+    expect(page).to have_content("These tests are awesome?")
+  end
+end
