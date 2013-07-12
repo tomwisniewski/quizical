@@ -52,4 +52,8 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'selenium-webdriver'
   gem 'pry'
+  gem 'launchy'
 end
+
+gem 'newrelic_rpm'
+
