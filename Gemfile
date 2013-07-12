@@ -56,4 +56,5 @@ group :development, :test do
 end
 
 gem 'newrelic_rpm'
+gem 'unicorn'
 
