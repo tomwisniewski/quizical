@@ -9,6 +9,9 @@ gem 'rails', '4.0.0'
 # new relic gem
 gem 'newrelic_rpm'
 
+# unicorn gem
+gem 'unicorn'
+
 # pg gem
 gem 'pg'
 
