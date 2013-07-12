@@ -8,7 +8,7 @@ class GamesController < ApplicationController
     game.save
     session[:game_id] = game.id
     session[:question_number] = 1
-    redirect_to responses_new_path
+    redirect_to new_response_path
   end
 
   def new

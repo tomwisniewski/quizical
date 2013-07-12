@@ -1,7 +1,5 @@
 Quizical::Application.routes.draw do
 
-  get "responses/new"
-  get "responses/create"
   root 'users#new'
 
   resources :users
@@ -9,7 +7,7 @@ Quizical::Application.routes.draw do
   resources :sessions, only: [:new, :create]
   delete '/logout' => 'sessions#destroy', as: :logout
   resources :games, only: [:index, :create, :new]
-  resources :responses, only: :create
+  resources :responses, only: [:create, :new]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
