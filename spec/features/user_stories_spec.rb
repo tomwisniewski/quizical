@@ -262,6 +262,7 @@ feature "Logged in user starts a new game" do
       fill_in 'Password Confirmation', :with => "Password"
       click_button 'Submit'
     end
+
     click_link "My Questions"
 
     click_link "Add a new question"
@@ -272,19 +273,23 @@ feature "Logged in user starts a new game" do
     
     click_link "Add a new question"
     fill_in "Question Statement", :with => "Select true or false q2"
-    choose "false"
+    choose "False"
     fill_in "Category", :with => "General"
     click_button "Submit"
+
+    visit '/'
   end
   
   scenario "with two questions" do
     click_link "New Game"
+    # fill in some game settings
+    click_link "Start Game"
     expect(page).to have_content("Question 1")
     choose "True"
-    click_link "Next"
+    click_button "Submit"
     expect(page).to have_content("Question 2")
     choose "True"
-    click_link "Next"
+    click_button "Submit"
     # expect(page).to have_content("Game Over")
     # expect(page).to have_content("Score")
   end

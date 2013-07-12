@@ -12,15 +12,11 @@
   
   <%= form_for :response, :url => responses_path do |f| %>
     <fieldset>
-      <%= f.label(:value_true, "True") %>
+      <%= f.label(:answer_true, "True") %>
       <%= radio_button(:response, "answer", true) %>
       
-      <%= f.label(:value_false, "False") %>
+      <%= f.label(:answer_false, "False") %>
       <%= radio_button(:response, "answer", false) %>   
-
-      <%= f.hidden_field :game_id, :value => @game_id %>
-      
-      <%= f.hidden_field :question_id, :value => @question.id %>
       
       <%= f.submit :value => "Submit"%>
     </fieldset>

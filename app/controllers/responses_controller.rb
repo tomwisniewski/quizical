@@ -2,18 +2,19 @@ class ResponsesController < ApplicationController
 
   def create
     @response = Response.new(
-      :game_id => params[:response][:game_id],
       :value => params[:response][:value],
-      :question_id => params[:response][:question_id]
+      :game_id => session[:game_id],
+      :question_id => session[:question_number]
     )
     @response.save
-    session[:question_number] += 1
-    redirect_to responses_new_path
+    redirect_to new_response_path
   end
 
   def new
     @game_id = session[:game_id]
-    @question_number = session[:question_number]
+    @question_number = session[:question_number] || 0
+    @question_number += 1
+    session[:question_number] = @question_number
     @question = Question.pick
   end
 

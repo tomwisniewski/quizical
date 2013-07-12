@@ -27,7 +27,7 @@ describe UsersController do
     end
   end
 
-    describe "POST 'update'" do
+  describe "POST 'update'" do
     it "creates the user" do
       user = User.create(:username => 'tommy', :email => 'tommy@gmail.cm', :password => 'password', :password_confirmation => 'password')
       expect(User.all.count).to eql 1
