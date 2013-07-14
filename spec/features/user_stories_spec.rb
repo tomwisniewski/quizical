@@ -282,7 +282,9 @@ feature "Logged in user starts a new game" do
   
   scenario "with two questions" do
     click_link "New Game"
+    
     # fill in some game settings
+
     click_link "Start Game"
     expect(page).to have_content("Question 1")
     choose "True"
@@ -290,7 +292,7 @@ feature "Logged in user starts a new game" do
     expect(page).to have_content("Question 2")
     choose "True"
     click_button "Submit"
-    # expect(page).to have_content("Game Over")
-    # expect(page).to have_content("Score")
+    expect(page).to have_content("Game Over")
+    expect(page).to have_content("Score")
   end
 end
