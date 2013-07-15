@@ -12,7 +12,6 @@
     <% @user = User.find(session[:user_id]) %>
       <li><%= link_to 'Log Out', logout_path, :method => :delete %></li>
       <li><%= link_to 'My Profile', user_path(@user) %></li>
-      <li><%= link_to 'Edit My Details', edit_user_path(@user) %></li> 
       <li><%= link_to 'My Questions', questions_path %></li> 
       <li><%= link_to 'New Game', new_game_path %></li>
       <li><%= link_to 'Leaderboard', users_path %></li> 
