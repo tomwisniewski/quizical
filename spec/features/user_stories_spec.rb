@@ -156,7 +156,7 @@ feature "User views Leaderboard" do
   end
 
   scenario "when logged in" do
-    click_link 'View Leaderboard'
+    click_link 'Leaderboard'
     expect(page).to have_content("TomWissy")
     expect(page).to have_content("NeilAtkins")
   end
@@ -199,7 +199,7 @@ feature "User can edit their details" do
   scenario "when logged in" do
     expect(page).to have_content("TomWissy")
     expect(page).to have_content("tom@gmail.com")
-    click_link 'Edit Details'
+    click_link 'Edit My Details'
     fill_in 'Email', :with => "neil@gmail.com"
     fill_in 'Password', :with => "Pissyword"
     fill_in 'Password Confirmation', :with => "Pissyword"
