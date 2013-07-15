@@ -1,27 +1,27 @@
 
 <div>
-  <div>
-    <p class="label">Username:</p>
-    <span><%= @user.username %></span>
-  </div>
-  <div>
-    <p class="label">Email:</p>
-    <span><%= @user.email %></span>
-  </div>
-  <div>
-    <p class="label">Created at:</p>
-    <span><%= @user.created_at %></span>
-  </div>
-  <div>
-    <p class="label">Updated at:</p>
-    <span><%= @user.updated_at %></span>
-  </div>
-  <div>
-    <p class="label">Games played:</p>
-    <span><%= "?" %></span>
-  </div>
-  <div>
-    <p class="label">Correct answers:</p>
-    <span><%= "?" %></span>
-  </div>
+  <p class="label">Username:</p>
+  <span><%= @user.username %></span>
 </div>
+<div>
+  <p class="label">Email:</p>
+  <span><%= @user.email %></span>
+</div>
+<div>
+  <p class="label">Created at:</p>
+  <span><%= @user.created_at %></span>
+</div>
+<div>
+  <p class="label">Updated at:</p>
+  <span><%= @user.updated_at %></span>
+</div>
+<div>
+  <p class="label">Games played:</p>
+  <span><%= "?" %></span>
+</div>
+<div>
+  <p class="label">Correct answers:</p>
+  <span><%= "?" %></span>
+</div>
+
+<link_to edit_user_path(@user)

@@ -6,6 +6,12 @@ gem 'rails', '4.0.0'
 # Use sqlite3 as the database for Active Record
 # gem 'sqlite3'
 
+# new relic gem
+gem 'newrelic_rpm'
+
+# unicorn gem
+gem 'unicorn'
+
 # pg gem
 gem 'pg'
 
@@ -53,8 +59,7 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'pry'
   gem 'launchy'
+  gem 'terminal-notifier-guard'
+  gem 'guard-rspec'
 end
-
-gem 'newrelic_rpm'
-gem 'unicorn'
 
