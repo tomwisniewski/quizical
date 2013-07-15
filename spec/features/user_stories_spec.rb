@@ -251,7 +251,7 @@ feature "User can add questions" do
   end
 end
 
-feature "Logged in user starts a new game" do
+feature "Logged in user can play a new game" do
   
   before(:each) do
     visit '/'
@@ -274,6 +274,12 @@ feature "Logged in user starts a new game" do
     click_link "Add a new question"
     fill_in "Question Statement", :with => "Select true or false q2"
     choose "False"
+    fill_in "Category", :with => "History"
+    click_button "Submit"
+    
+    click_link "Add a new question"
+    fill_in "Question Statement", :with => "Select true or false (another general question) q3"
+    choose "False"
     fill_in "Category", :with => "General"
     click_button "Submit"
 
@@ -283,16 +289,38 @@ feature "Logged in user starts a new game" do
   scenario "with two questions" do
     click_link "New Game"
     
-    # fill in some game settings
+    fill_in "Question Limit", :with => "2"
+    page.select("General", :from => 'game_question_category')
 
-    click_link "Start Game"
+    click_button "Start Game"
     expect(page).to have_content("Question 1")
-    choose "True"
+    choose "False"
     click_button "Submit"
+
     expect(page).to have_content("Question 2")
-    choose "True"
+    choose "False"
     click_button "Submit"
+
     expect(page).to have_content("Game Over")
-    expect(page).to have_content("Score")
+
+  end
+
+  scenario "having already played a previous game" do
+    click_link "New Game"
+    
+    fill_in "Question Limit", :with => "1"
+    page.select("General", :from => 'game_question_category')
+
+    click_button "Start Game"
+    choose "False"
+    click_button "Submit"
+
+    click_link "New Game"
+    
+    fill_in "Question Limit", :with => "2"
+    page.select("General", :from => 'game_question_category')
+
+    click_button "Start Game"
+    expect(page).to have_content("Question 1")
   end
 end

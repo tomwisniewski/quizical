@@ -21,8 +21,11 @@ describe GamesController do
   describe "POST 'create'" do
     it "returns http success" do
       expect(Game.all.count).to eql 0
-      post 'create'
+      session[:game_id] = 2
+      post 'create', :game => {:question_limit => 2, :question_category => "General"}
       expect(Game.all.count).to eql 1
+      expect(Game.first.question_limit).to eql 2
+      expect(Game.first.question_category).to eql "General"
       assert_redirected_to new_response_path
     end
   end
