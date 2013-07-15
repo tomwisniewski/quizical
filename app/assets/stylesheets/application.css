@@ -11,11 +11,2962 @@
  *= require_self
  *= require_tree .
  */
+/**
+ * Zimit.less
+ *
+ * Final less to css compile file.
+ *
+ * @project Zimit Framework
+ * @version 0.9.8
+ * @author Jorge Garrido Oval, firezenk@gmail.com
+ * @copyright 2012
+ * @license MIT
+ */
+/**
+ * Fonts.less
+ *
+ * Font definition for all styled texts.
+ *
+ * @project Zimit Framework
+ * @version 0.9.8
+ * @author Jorge Garrido Oval, firezenk@gmail.com
+ * @copyright 2012
+ * @license MIT
+ */
+@import url("http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,700,400,600&.css");
+
+html,
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 700;
+}
 
 
-.button {
-  border-radius: 5px;
-  border: 1px solid black;
-  background-color: gray;
+
+h1 {
+  margin: auto;
+  font-size: 3.6em;
+}
+
+h2 {
+  font-size: 3.0em;
+}
+
+h3 {
+  font-size: 2.4em;
+}
+
+h4 {
+  font-size: 1.8em;
+}
+
+h5 {
+  font-weight: 400;
+  font-size: 1.6em;
+}
+
+h6 {
+  font-weight: 400;
+  font-size: 1.4em;
+}
+
+p {
+  font-size: 1em;
+  font-weight: 400;
+}
+
+b,
+strong {
+  font-size: 1em;
+  font-weight: 700;
+  font-style: bold;
+}
+
+em {
+  font-size: 1em;
+  font-weight: 600;
+  font-style: italic;
+}
+
+ul {
+  font-size: 1em;
+  font-weight: 300;
+}
+
+ul li {
+  font-weight: 400;
+}
+
+section h2 {
+  display: inline;
+  font-weight: 600;
+}
+section h6 {
+  display: inline;
+  margin-left: 10px;
+  font-weight: 400;
+  color: #808080;
+}
+section h6:before {
+  content: " ";
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section,
+summary {
+  display: block;
+}
+audio,
+canvas,
+video {
+  display: inline-block;
+}
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+[hidden] {
+  display: none;
+}
+html {
+  font-family: 'Open Sans', sans-serif;
+  /* 1 */
+
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  /* 2 */
 
 }
+body {
+  margin: 0;
+}
+a:focus {
+  outline: thin dotted;
+}
+a:active,
+a:hover {
+  outline: 0;
+}
+h1 {
+  font-size: 2em;
+}
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+b,
+strong {
+  font-weight: bold;
+}
+dfn {
+  font-style: italic;
+}
+mark {
+  background: #ff0;
+  color: #000;
+}
+code,
+kbd,
+pre,
+samp {
+  font-size: 1em;
+  font-family: monospace, 'Open Sans', sans-serif;
+}
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+q {
+  quotes: "\201C" "\201D" "\2018" "\2019";
+}
+small {
+  font-size: 80%;
+}
+sub,
+sup {
+  position: relative;
+  vertical-align: baseline;
+  font-size: 75%;
+  line-height: 0;
+}
+sup {
+  top: -0.5em;
+}
+sub {
+  bottom: -0.25em;
+}
+img {
+  border: 0;
+}
+svg:not(:root) {
+  overflow: hidden;
+}
+figure {
+  margin: 0;
+}
+fieldset {
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+  border: 1px solid #c0c0c0;
+}
+legend {
+  padding: 0;
+  /* 2 */
+
+  border: 0;
+  /* 1 */
+
+}
+button,
+input,
+select,
+textarea {
+  margin: 0;
+  /* 3 */
+
+  font-size: 100%;
+  /* 2 */
+
+  font-family: inherit;
+  /* 1 */
+
+}
+button,
+input {
+  line-height: normal;
+}
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  cursor: pointer;
+  /* 3 */
+
+  -webkit-appearance: button;
+  /* 2 */
+
+}
+button[disabled],
+input[disabled] {
+  cursor: default;
+}
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+
+  padding: 0;
+  /* 2 */
+
+}
+input[type="search"] {
+  -webkit-box-sizing: content-box;
+  /* 2 */
+
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  -webkit-appearance: textfield;
+  /* 1 */
+
+}
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+textarea {
+  overflow: auto;
+  /* 1 */
+
+  vertical-align: top;
+  /* 2 */
+
+}
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+img,
+embed,
+video,
+object {
+  max-width: 100%;
+}
+progress,
+progress[role] {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  border: none;
+  background-size: auto;
+  width: 400px;
+  height: 60px;
+}
+progress[role]:after {
+  background-image: none;
+}
+progress[role] strong {
+  display: none;
+}
+input[type="radio"],
+input[type="file"],
+input[type="checkbox"],
+select {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+breadcrumb,
+panel,
+alert,
+accordion,
+tab-host,
+tab,
+treee,
+pagination,
+modal,
+dropdown,
+notification,
+carousel,
+slide,
+thumbnail {
+  display: block;
+}
+/**
+ * Skeleton.less
+ *
+ * Basic skeleton definition.
+ *
+ * @project Zimit Framework
+ * @version 0.9.8
+ * @author Jorge Garrido Oval, firezenk@gmail.com
+ * @copyright 2012
+ * @license MIT
+ */
+html,
+body {
+  height: 100%;
+}
+/* Helper to fix elements; 
+
+  <div class="fix">Fixed space</div>
+*/
+.fix {
+  position: fixed;
+}
+/* Header element, new on HTML5;
+
+  <header>Documment header</header>
+*/
+header {
+  position: relative;
+  z-index: 10000;
+  margin: auto;
+  width: 100%;
+  height: auto;
+}
+/* Main container for the documment, before than 'header' and aften than 'footer'
+  
+  <main>Documment content</main>
+  or
+  <div class="content">Documment content</div>
+*/
+main,
+.content {
+  margin: auto;
+  padding-top: auto;
+  padding-bottom: auto;
+  min-height: 100%;
+  width: 1200px;
+  height: auto;
+}
+main:after,
+.content:after {
+  display: block;
+  clear: both;
+  width: 100%;
+  height: auto;
+}
+/* Footer element, new on HTML5;
+
+  <footer>Documment footer</footer>
+*/
+footer {
+  -webkit-box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+  box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+  position: relative;
+  margin: - auto auto 0;
+  padding: 20px;
+  height: auto;
+  border-top: 1px solid #979797;
+  background-color: #e5e0e4;
+}
+/**
+ * Components.less
+ *
+ * Components definition: only single component definitions allowed.
+ *
+ * @project Zimit Framework
+ * @version 0.9.8
+ * @author Jorge Garrido Oval, firezenk@gmail.com
+ * @copyright 2012
+ * @license MIT
+ */
+/* Separator element: 'hr'; 
+
+  <hr/>
+*/
+hr {
+  border: 0;
+  height: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+/* Ampersand optionally styled;
+
+  <span class="amp">&amp;</span>
+*/
+span.amp {
+  font-style: italic;
+  font-family: Baskerville, Palatino, "Book Antiqua", serif;
+}
+/* Blockquote detailed styling;
+
+  <blockquote>Sample blockquote text</blockquote>
+*/
+blockquote {
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  border-left: 10px solid #979797;
+  background: #e5e0e4;
+  quotes: "\201C" "\201D" "\2018" "\2019";
+}
+blockquote:before {
+  margin-right: 0.25em;
+  color: #979797;
+  content: open-quote;
+  vertical-align: -0.4em;
+  font-size: 4em;
+  line-height: 0.1em;
+}
+blockquote p {
+  display: inline;
+}
+/* Navigantion bar, higly recommended to make the page header menu;
+
+  <nav>
+    <a class="site">Site name</a>
+
+        <input id="expand-util" type="checkbox"/>
+        <label for="expand-util"><icon class="expand">menu</icon></label>
+
+    <ul id="menu">
+      <li><a>Section 1</a>
+      <li><a>Section 2</a>
+      <li><a>Section 3</a>
+    </ul>
+  </nav>
+*/
+nav {
+  overflow: hidden;
+  padding: 10px;
+  width: 100%;
+  border: 1px solid #979797;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  background-clip: padding-box;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#e5e0e4));
+  background: -webkit-linear-gradient(top, #ffffff, #e5e0e4);
+  background: -moz-linear-gradient(top, #ffffff, #e5e0e4);
+  background: -ms-linear-gradient(top, #ffffff, #e5e0e4);
+  background: -o-linear-gradient(top, #ffffff, #e5e0e4);
+  background-color: #ffffff;
+}
+nav ul {
+  margin: 0 10px 0 10px;
+  padding: 0;
+  list-style: none;
+}
+nav ul li a {
+  float: left;
+  margin-right: 10px;
+  padding-right: 10px;
+  border: solid #979797;
+  border-width: 0 1px 0 0px;
+  color: #979797;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+}
+nav ul li a:hover {
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+}
+nav ul li:first-child a {
+  border-left: none;
+}
+nav ul li:last-child a {
+  border-right: none;
+}
+nav .search {
+  display: block;
+  float: right;
+  margin: 0px;
+  padding: 0 0 0 14px;
+}
+@media (max-width: 767px) {
+  nav .search {
+    display: none;
+  }
+}
+nav .site {
+  float: left;
+  margin-right: 20px;
+  color: #979797;
+  text-decoration: none;
+  font-weight: 700;
+}
+@media (max-width: 767px) {
+  nav .site {
+    visibility: visible;
+  }
+}
+nav .expand {
+  display: none;
+  float: right;
+  padding: 2px 8px 2px 8px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 100%;
+  border: 1px solid #979797;
+  color: #979797;
+  font-weight: 400;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#e5e0e4));
+  background: -webkit-linear-gradient(top, #ffffff, #e5e0e4);
+  background: -moz-linear-gradient(top, #ffffff, #e5e0e4);
+  background: -ms-linear-gradient(top, #ffffff, #e5e0e4);
+  background: -o-linear-gradient(top, #ffffff, #e5e0e4);
+  background-color: #ffffff;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  background-clip: padding-box;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+}
+nav .expand:hover {
+  background: -webkit-gradient(linear, left top, left bottom, from(#e5e0e4), to(#e5e0e4));
+  background: -webkit-linear-gradient(top, #e5e0e4, #e5e0e4);
+  background: -moz-linear-gradient(top, #e5e0e4, #e5e0e4);
+  background: -ms-linear-gradient(top, #e5e0e4, #e5e0e4);
+  background: -o-linear-gradient(top, #e5e0e4, #e5e0e4);
+  background-color: #e5e0e4;
+  -webkit-box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+  box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+}
+@media (max-width: 767px) {
+  nav .expand {
+    display: block;
+  }
+}
+nav input[type="checkbox"] {
+  display: none;
+}
+@media (max-width: 767px) {
+  nav input[type="checkbox"] ~ #menu {
+    display: none;
+    background: transparent;
+  }
+}
+nav input[type="checkbox"]:checked ~ #menu {
+  display: block;
+  height: auto;
+  width: 100%;
+  margin: 0px;
+  margin-top: 10px;
+  -webkit-transition: height 3s ease;
+  -moz-transition: height 3s ease;
+  -ms-transition: height 3s ease;
+  -o-transition: height 3s ease;
+}
+nav input[type="checkbox"]:checked ~ #menufirst-child {
+  margin-top: 10px;
+}
+nav input[type="checkbox"]:checked ~ #menu a {
+  float: left;
+  color: #979797;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  width: 100%;
+  border: 0px;
+  border-top: 1px solid #979797;
+  padding: 0px;
+}
+nav input[type="checkbox"]:checked ~ #menu a:hover {
+  color: #ffffff;
+  background-color: #cec4cc;
+}
+/* Styled link element;
+
+  <a href="#">Sample link</a>
+*/
+a {
+  color: #aad1f8;
+}
+/* Styled buttons, also with icons; 
+
+  <button>Sample button</button>
+*/
+button {
+  margin-top: 2px;
+  margin-bottom: 2px;
+  border: 1px solid #979797;
+  color: #979797;
+  font-weight: 400;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#e5e0e4));
+  background: -webkit-linear-gradient(top, #ffffff, #e5e0e4);
+  background: -moz-linear-gradient(top, #ffffff, #e5e0e4);
+  background: -ms-linear-gradient(top, #ffffff, #e5e0e4);
+  background: -o-linear-gradient(top, #ffffff, #e5e0e4);
+  background-color: #ffffff;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  background-clip: padding-box;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+}
+button icon,
+button .lsf {
+  font-size: 120%;
+}
+button:hover {
+  background: -webkit-gradient(linear, left top, left bottom, from(#e5e0e4), to(#e5e0e4));
+  background: -webkit-linear-gradient(top, #e5e0e4, #e5e0e4);
+  background: -moz-linear-gradient(top, #e5e0e4, #e5e0e4);
+  background: -ms-linear-gradient(top, #e5e0e4, #e5e0e4);
+  background: -o-linear-gradient(top, #e5e0e4, #e5e0e4);
+  background-color: #e5e0e4;
+  -webkit-box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+  box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+}
+input[type="submit"] {
+  border: 1px solid #979797;
+  color: #979797;
+  font-weight: 400;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#e5e0e4));
+  background: -webkit-linear-gradient(top, #ffffff, #e5e0e4);
+  background: -moz-linear-gradient(top, #ffffff, #e5e0e4);
+  background: -ms-linear-gradient(top, #ffffff, #e5e0e4);
+  background: -o-linear-gradient(top, #ffffff, #e5e0e4);
+  background-color: #ffffff;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  background-clip: padding-box;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+}
+input[type="submit"]:hover {
+  background: -webkit-gradient(linear, left top, left bottom, from(#e5e0e4), to(#e5e0e4));
+  background: -webkit-linear-gradient(top, #e5e0e4, #e5e0e4);
+  background: -moz-linear-gradient(top, #e5e0e4, #e5e0e4);
+  background: -ms-linear-gradient(top, #e5e0e4, #e5e0e4);
+  background: -o-linear-gradient(top, #e5e0e4, #e5e0e4);
+  background-color: #e5e0e4;
+  -webkit-box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+  box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+}
+input[type="reset"] {
+  border: 1px solid #979797;
+  color: #979797;
+  font-weight: 400;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#e5e0e4));
+  background: -webkit-linear-gradient(top, #ffffff, #e5e0e4);
+  background: -moz-linear-gradient(top, #ffffff, #e5e0e4);
+  background: -ms-linear-gradient(top, #ffffff, #e5e0e4);
+  background: -o-linear-gradient(top, #ffffff, #e5e0e4);
+  background-color: #ffffff;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  background-clip: padding-box;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+}
+input[type="reset"]:hover {
+  background: -webkit-gradient(linear, left top, left bottom, from(#e5e0e4), to(#e5e0e4));
+  background: -webkit-linear-gradient(top, #e5e0e4, #e5e0e4);
+  background: -moz-linear-gradient(top, #e5e0e4, #e5e0e4);
+  background: -ms-linear-gradient(top, #e5e0e4, #e5e0e4);
+  background: -o-linear-gradient(top, #e5e0e4, #e5e0e4);
+  background-color: #e5e0e4;
+  -webkit-box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+  box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+}
+/* Optional coloured styled buttons, also with icons; 
+
+  <button class="btn-red">Sample button</button>
+  <button class="btn-blue">Sample button</button>
+  <button class="btn-orange">Sample button</button>
+  <button class="btn-yellow">Sample button</button>
+*/
+.btn-red {
+  color: #ffffff;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ff9999), to(#cc0000));
+  background: -webkit-linear-gradient(top, #ff9999, #cc0000);
+  background: -moz-linear-gradient(top, #ff9999, #cc0000);
+  background: -ms-linear-gradient(top, #ff9999, #cc0000);
+  background: -o-linear-gradient(top, #ff9999, #cc0000);
+  background-color: #ff9999;
+}
+.btn-red:hover {
+  background: -webkit-gradient(linear, left top, left bottom, from(#cc0000), to(#cc0000));
+  background: -webkit-linear-gradient(top, #cc0000, #cc0000);
+  background: -moz-linear-gradient(top, #cc0000, #cc0000);
+  background: -ms-linear-gradient(top, #cc0000, #cc0000);
+  background: -o-linear-gradient(top, #cc0000, #cc0000);
+  background-color: #cc0000;
+}
+.btn-blue {
+  color: #ffffff;
+  background: -webkit-gradient(linear, left top, left bottom, from(#c5d1f6), to(#214cce));
+  background: -webkit-linear-gradient(top, #c5d1f6, #214cce);
+  background: -moz-linear-gradient(top, #c5d1f6, #214cce);
+  background: -ms-linear-gradient(top, #c5d1f6, #214cce);
+  background: -o-linear-gradient(top, #c5d1f6, #214cce);
+  background-color: #c5d1f6;
+}
+.btn-blue:hover {
+  background: -webkit-gradient(linear, left top, left bottom, from(#214cce), to(#214cce));
+  background: -webkit-linear-gradient(top, #214cce, #214cce);
+  background: -moz-linear-gradient(top, #214cce, #214cce);
+  background: -ms-linear-gradient(top, #214cce, #214cce);
+  background: -o-linear-gradient(top, #214cce, #214cce);
+  background-color: #214cce;
+}
+.btn-orange {
+  color: #ffffff;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffdb99), to(#cc8400));
+  background: -webkit-linear-gradient(top, #ffdb99, #cc8400);
+  background: -moz-linear-gradient(top, #ffdb99, #cc8400);
+  background: -ms-linear-gradient(top, #ffdb99, #cc8400);
+  background: -o-linear-gradient(top, #ffdb99, #cc8400);
+  background-color: #ffdb99;
+}
+.btn-orange:hover {
+  background: -webkit-gradient(linear, left top, left bottom, from(#cc8400), to(#cc8400));
+  background: -webkit-linear-gradient(top, #cc8400, #cc8400);
+  background: -moz-linear-gradient(top, #cc8400, #cc8400);
+  background: -ms-linear-gradient(top, #cc8400, #cc8400);
+  background: -o-linear-gradient(top, #cc8400, #cc8400);
+  background-color: #cc8400;
+}
+.btn-yellow {
+  color: #ffffff;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffef99), to(#ccac00));
+  background: -webkit-linear-gradient(top, #ffef99, #ccac00);
+  background: -moz-linear-gradient(top, #ffef99, #ccac00);
+  background: -ms-linear-gradient(top, #ffef99, #ccac00);
+  background: -o-linear-gradient(top, #ffef99, #ccac00);
+  background-color: #ffef99;
+}
+.btn-yellow:hover {
+  background: -webkit-gradient(linear, left top, left bottom, from(#ccac00), to(#ccac00));
+  background: -webkit-linear-gradient(top, #ccac00, #ccac00);
+  background: -moz-linear-gradient(top, #ccac00, #ccac00);
+  background: -ms-linear-gradient(top, #ccac00, #ccac00);
+  background: -o-linear-gradient(top, #ccac00, #ccac00);
+  background-color: #ccac00;
+}
+.btn-green {
+  color: #ffffff;
+  background: -webkit-gradient(linear, left top, left bottom, from(#6bdb6b), to(#186218));
+  background: -webkit-linear-gradient(top, #6bdb6b, #186218);
+  background: -moz-linear-gradient(top, #6bdb6b, #186218);
+  background: -ms-linear-gradient(top, #6bdb6b, #186218);
+  background: -o-linear-gradient(top, #6bdb6b, #186218);
+  background-color: #6bdb6b;
+}
+.btn-green:hover {
+  background: -webkit-gradient(linear, left top, left bottom, from(#186218), to(#186218));
+  background: -webkit-linear-gradient(top, #186218, #186218);
+  background: -moz-linear-gradient(top, #186218, #186218);
+  background: -ms-linear-gradient(top, #186218, #186218);
+  background: -o-linear-gradient(top, #186218, #186218);
+  background-color: #186218;
+}
+.btn-brown {
+  color: #ffffff;
+  background: -webkit-gradient(linear, left top, left bottom, from(#dea488), to(#783e22));
+  background: -webkit-linear-gradient(top, #dea488, #783e22);
+  background: -moz-linear-gradient(top, #dea488, #783e22);
+  background: -ms-linear-gradient(top, #dea488, #783e22);
+  background: -o-linear-gradient(top, #dea488, #783e22);
+  background-color: #dea488;
+}
+.btn-brown:hover {
+  background: -webkit-gradient(linear, left top, left bottom, from(#783e22), to(#783e22));
+  background: -webkit-linear-gradient(top, #783e22, #783e22);
+  background: -moz-linear-gradient(top, #783e22, #783e22);
+  background: -ms-linear-gradient(top, #783e22, #783e22);
+  background: -o-linear-gradient(top, #783e22, #783e22);
+  background-color: #783e22;
+}
+.btn-gray {
+  color: #ffffff;
+  background: -webkit-gradient(linear, left top, left bottom, from(#cdcdcd), to(#676767));
+  background: -webkit-linear-gradient(top, #cdcdcd, #676767);
+  background: -moz-linear-gradient(top, #cdcdcd, #676767);
+  background: -ms-linear-gradient(top, #cdcdcd, #676767);
+  background: -o-linear-gradient(top, #cdcdcd, #676767);
+  background-color: #cdcdcd;
+}
+.btn-gray:hover {
+  background: -webkit-gradient(linear, left top, left bottom, from(#676767), to(#676767));
+  background: -webkit-linear-gradient(top, #676767, #676767);
+  background: -moz-linear-gradient(top, #676767, #676767);
+  background: -ms-linear-gradient(top, #676767, #676767);
+  background: -o-linear-gradient(top, #676767, #676767);
+  background-color: #676767;
+}
+.btn-black {
+  color: #ffffff;
+  background: -webkit-gradient(linear, left top, left bottom, from(#4d4d4d), to(#000000));
+  background: -webkit-linear-gradient(top, #4d4d4d, #000000);
+  background: -moz-linear-gradient(top, #4d4d4d, #000000);
+  background: -ms-linear-gradient(top, #4d4d4d, #000000);
+  background: -o-linear-gradient(top, #4d4d4d, #000000);
+  background-color: #4d4d4d;
+}
+.btn-black:hover {
+  background: -webkit-gradient(linear, left top, left bottom, from(#000000), to(#000000));
+  background: -webkit-linear-gradient(top, #000000, #000000);
+  background: -moz-linear-gradient(top, #000000, #000000);
+  background: -ms-linear-gradient(top, #000000, #000000);
+  background: -o-linear-gradient(top, #000000, #000000);
+  background-color: #000000;
+}
+.btn-white {
+  color: #000000;
+  background: -webkit-gradient(linear, left top, left bottom, from(#e6e6e6), to(#b3b3b3));
+  background: -webkit-linear-gradient(top, #e6e6e6, #b3b3b3);
+  background: -moz-linear-gradient(top, #e6e6e6, #b3b3b3);
+  background: -ms-linear-gradient(top, #e6e6e6, #b3b3b3);
+  background: -o-linear-gradient(top, #e6e6e6, #b3b3b3);
+  background-color: #e6e6e6;
+}
+.btn-white:hover {
+  background: -webkit-gradient(linear, left top, left bottom, from(#e6e6e6), to(#e6e6e6));
+  background: -webkit-linear-gradient(top, #e6e6e6, #e6e6e6);
+  background: -moz-linear-gradient(top, #e6e6e6, #e6e6e6);
+  background: -ms-linear-gradient(top, #e6e6e6, #e6e6e6);
+  background: -o-linear-gradient(top, #e6e6e6, #e6e6e6);
+  background-color: #e6e6e6;
+}
+/* Checkbox and radio buttons;
+
+  <input type="checkbox"></input>
+  <input type="radio"></input>
+*/
+input[type="checkbox"] {
+  padding: 7px;
+  border-width: 7px;
+  border: 1px solid #979797;
+  color: #979797;
+  font-weight: 400;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#e5e0e4));
+  background: -webkit-linear-gradient(top, #ffffff, #e5e0e4);
+  background: -moz-linear-gradient(top, #ffffff, #e5e0e4);
+  background: -ms-linear-gradient(top, #ffffff, #e5e0e4);
+  background: -o-linear-gradient(top, #ffffff, #e5e0e4);
+  background-color: #ffffff;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  background-clip: padding-box;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+}
+input[type="checkbox"]:checked {
+  padding: 4px;
+  border-width: 4px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#e5e0e4));
+  background: -webkit-linear-gradient(top, #ffffff, #e5e0e4);
+  background: -moz-linear-gradient(top, #ffffff, #e5e0e4);
+  background: -ms-linear-gradient(top, #ffffff, #e5e0e4);
+  background: -o-linear-gradient(top, #ffffff, #e5e0e4);
+  background-color: #ffffff;
+}
+input[type="checkbox"]:hover {
+  background: -webkit-gradient(linear, left top, left bottom, from(#e5e0e4), to(#e5e0e4));
+  background: -webkit-linear-gradient(top, #e5e0e4, #e5e0e4);
+  background: -moz-linear-gradient(top, #e5e0e4, #e5e0e4);
+  background: -ms-linear-gradient(top, #e5e0e4, #e5e0e4);
+  background: -o-linear-gradient(top, #e5e0e4, #e5e0e4);
+  background-color: #e5e0e4;
+  -webkit-box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+  box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+}
+input[type="radio"] {
+  padding: 7px;
+  border-width: 7px;
+  border: 1px solid #979797;
+  color: #979797;
+  font-weight: 400;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#e5e0e4));
+  background: -webkit-linear-gradient(top, #ffffff, #e5e0e4);
+  background: -moz-linear-gradient(top, #ffffff, #e5e0e4);
+  background: -ms-linear-gradient(top, #ffffff, #e5e0e4);
+  background: -o-linear-gradient(top, #ffffff, #e5e0e4);
+  background-color: #ffffff;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  border-radius: 25px;
+  background-clip: padding-box;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+}
+input[type="radio"]:checked {
+  padding: 4px;
+  border-width: 4px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  border-radius: 25px;
+  background-clip: padding-box;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#e5e0e4));
+  background: -webkit-linear-gradient(top, #ffffff, #e5e0e4);
+  background: -moz-linear-gradient(top, #ffffff, #e5e0e4);
+  background: -ms-linear-gradient(top, #ffffff, #e5e0e4);
+  background: -o-linear-gradient(top, #ffffff, #e5e0e4);
+  background-color: #ffffff;
+}
+input[type="radio"] label {
+  padding-bottom: 7px;
+}
+input[type="radio"]:hover {
+  background: -webkit-gradient(linear, left top, left bottom, from(#e5e0e4), to(#e5e0e4));
+  background: -webkit-linear-gradient(top, #e5e0e4, #e5e0e4);
+  background: -moz-linear-gradient(top, #e5e0e4, #e5e0e4);
+  background: -ms-linear-gradient(top, #e5e0e4, #e5e0e4);
+  background: -o-linear-gradient(top, #e5e0e4, #e5e0e4);
+  background-color: #e5e0e4;
+  -webkit-box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+  box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+}
+/* Text inputs;
+
+  <input type="text"></input>
+  <input type="password"></input>
+  <input type="number"></input>
+*/
+input {
+  margin: 2px;
+  border: 1px solid #979797;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  background-clip: padding-box;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+}
+input[type="text"],
+input[type="password"],
+input[type="number"] {
+  -webkit-box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+  box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+}
+
+/* Custom selection component;
+
+  <div class="select">
+        <select>
+            <option selected value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="opel">Opel</option>
+            <option value="audi">Audi</option>
+        </select>
+        <icon>down</icon> 
+    </div>
+*/
+select {
+  position: absolute;
+  display: inline;
+  margin-left: -42.5px;
+  padding: 0px;
+  width: 85px;
+  border-width: 0px;
+  background-color: transparent;
+  color: transparent;
+}
+.select {
+  width: 85px;
+  padding: 4px;
+  border: 1px solid #979797;
+  color: #979797;
+  font-weight: 400;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#e5e0e4));
+  background: -webkit-linear-gradient(top, #ffffff, #e5e0e4);
+  background: -moz-linear-gradient(top, #ffffff, #e5e0e4);
+  background: -ms-linear-gradient(top, #ffffff, #e5e0e4);
+  background: -o-linear-gradient(top, #ffffff, #e5e0e4);
+  background-color: #ffffff;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  background-clip: padding-box;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+}
+.select icon,
+.select .lsf {
+  float: right;
+  padding-right: 2px;
+  padding-left: 5px;
+  border: solid #979797;
+  border-width: 0 0 0 1px;
+  font-size: 120%;
+}
+.select:hover {
+  background: -webkit-gradient(linear, left top, left bottom, from(#e5e0e4), to(#e5e0e4));
+  background: -webkit-linear-gradient(top, #e5e0e4, #e5e0e4);
+  background: -moz-linear-gradient(top, #e5e0e4, #e5e0e4);
+  background: -ms-linear-gradient(top, #e5e0e4, #e5e0e4);
+  background: -o-linear-gradient(top, #e5e0e4, #e5e0e4);
+  background-color: #e5e0e4;
+  -webkit-box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+  box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+}
+/* Dedicated input to web search;
+  
+  <input type="text" class="search" placeholder="Search"/>
+*/
+.search {
+  padding-left: 14px;
+  border: 1px solid #979797;
+  font-weight: 400;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+  background-clip: padding-box;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+}
+
+/* Round-cornered textarea for large texts;
+
+  <textarea cols="19" rows="2">Sample text...</textarea>
+*/
+textarea {
+  margin: 2px;
+  border: 1px solid #979797;
+  text-indent: 0px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  background-clip: padding-box;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  -webkit-box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+  box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+}
+/* Round-cornered fieldset;
+  
+  <form>
+        <fieldset>
+          <legend>Personalia:</legend>
+          Name: <input type="text" size="30" /><br />
+          Email: <input type="text" size="30" /><br />
+          Date of birth: <input type="text" size="10" />
+        </fieldset>
+    </form>
+*/
+fieldset {
+  margin: 2px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  background-clip: padding-box;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+}
+
+alert,
+.alert {
+  padding: 5px;
+  width: auto;
+  border: 2px solid;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  background-clip: padding-box;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+}
+alert[color="red"],
+.alert[color="red"] {
+  border: #990000;
+  background-color: #ff6666;
+  color: #990000;
+}
+alert[color="blue"],
+.alert[color="blue"] {
+  border: #1a3ca2;
+  background-color: #99afef;
+  color: #1a3ca2;
+}
+alert[color="orange"],
+.alert[color="orange"] {
+  border: #996300;
+  background-color: #ffc966;
+  color: #996300;
+}
+alert[color="yellow"],
+.alert[color="yellow"] {
+  border: #998100;
+  background-color: #ffe766;
+  color: #998100;
+}
+alert[color="green"],
+.alert[color="green"] {
+  border: #0e390e;
+  background-color: #42d142;
+  color: #0e390e;
+}
+alert[color="brown"],
+.alert[color="brown"] {
+  border: #502917;
+  background-color: #d28561;
+  color: #502917;
+}
+alert[color="gray"],
+.alert[color="gray"] {
+  border: #4d4d4d;
+  background-color: #b3b3b3;
+  color: #4d4d4d;
+}
+alert[color="black"],
+.alert[color="black"] {
+  border: #000000;
+  background-color: #333333;
+  color: #000000;
+}
+alert[color="white"],
+.alert[color="white"] {
+  border: #ffffff;
+  background-color: #cccccc;
+  color: #ffffff;
+}
+alert a,
+.alert a {
+  cursor: pointer;
+  font-weight: bold;
+  color: #000000;
+  text-decoration: none;
+  float: right;
+  margin-right: 5px;
+  content: "\00d7";
+}
+.alert-red {
+  border: #990000;
+  background-color: #ff6666;
+  color: #990000;
+}
+.alert-blue {
+  border: #1a3ca2;
+  background-color: #99afef;
+  color: #1a3ca2;
+}
+.alert-orange {
+  border: #996300;
+  background-color: #ffc966;
+  color: #996300;
+}
+.alert-yellow {
+  border: #998100;
+  background-color: #ffe766;
+  color: #998100;
+}
+.alert-green {
+  border: #0e390e;
+  background-color: #42d142;
+  color: #0e390e;
+}
+.alert-brown {
+  border: #502917;
+  background-color: #d28561;
+  color: #502917;
+}
+.alert-gray {
+  border: #4d4d4d;
+  background-color: #b3b3b3;
+  color: #4d4d4d;
+}
+.alert-black {
+  border: #000000;
+  background-color: #333333;
+  color: #000000;
+}
+.alert-white {
+  border: #ffffff;
+  background-color: #cccccc;
+  color: #ffffff;
+}
+/* Class to show useful tooltips to the users;
+
+  <a class="tooltip" href="#" data-details="Sample tooltip text">Tooltip</a>
+*/
+.tooltip {
+  position: relative;
+  cursor: help;
+  display: inline-block;
+  text-decoration: none;
+  color: #222222;
+  outline: none;
+  border-bottom: 2px dotted;
+}
+.tooltip:after {
+  content: attr(data-details);
+  position: absolute;
+  bottom: 130%;
+  left: 20%;
+  padding: 5px 15px;
+  white-space: nowrap;
+  color: #ffffff;
+  opacity: 0;
+  -webkit-opacity: 0;
+  -moz-opacity: 0;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -ms-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  background: -webkit-gradient(linear, left top, left bottom, from(#999999), to(#333333));
+  background: -webkit-linear-gradient(top, #999999, #333333);
+  background: -moz-linear-gradient(top, #999999, #333333);
+  background: -ms-linear-gradient(top, #999999, #333333);
+  background: -o-linear-gradient(top, #999999, #333333);
+  background-color: #999999;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  background-clip: padding-box;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+}
+.tooltip:before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: 20px solid #333333;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  left: 30%;
+  bottom: 90%;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -ms-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  opacity: 0;
+  -webkit-opacity: 0;
+  -moz-opacity: 0;
+}
+.tooltip:hover:after {
+  bottom: 100%;
+  opacity: 1;
+  -webkit-opacity: 1;
+  -moz-opacity: 1;
+}
+.tooltip:hover:before {
+  bottom: 70%;
+  opacity: 1;
+  -webkit-opacity: 1;
+  -moz-opacity: 1;
+}
+/* Breadcrumb to navigate folders or sites, also you can use 'ul' instead of 'breadcrumb';
+
+  <breadcrumb>
+      <li><a href="#">Grandparent</a>
+      <li><a href="#">Parent</a>
+      <li><a href="#">Child</a>
+      <li><a href="#">Grandchild</a>
+      <li><a href="#">Great-Grandchild</a>
+    </breadcrumb>
+*/
+breadcrumb,
+.breadcrumb {
+  padding: 1em;
+  border: 1px solid #979797;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#e5e0e4));
+  background: -webkit-linear-gradient(top, #ffffff, #e5e0e4);
+  background: -moz-linear-gradient(top, #ffffff, #e5e0e4);
+  background: -ms-linear-gradient(top, #ffffff, #e5e0e4);
+  background: -o-linear-gradient(top, #ffffff, #e5e0e4);
+  background-color: #ffffff;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  background-clip: padding-box;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+}
+breadcrumb ul,
+.breadcrumb ul {
+  white-space: nowrap;
+}
+breadcrumb li,
+.breadcrumb li {
+  display: inline-block;
+  margin: 0 9px 0 -10px;
+  padding: 0 20px;
+  position: relative;
+}
+breadcrumb li a,
+.breadcrumb li a {
+  color: #979797;
+  text-decoration: none;
+}
+breadcrumb li:before,
+.breadcrumb li:before,
+breadcrumb li:after,
+.breadcrumb li:after {
+  border-right: 1px solid #979797;
+  content: "";
+  display: block;
+  height: 50%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  -webkit-transform: skewx(30deg);
+  -moz-transform: skewx(30deg);
+  -ms-transform: skewx(30deg);
+  -o-transform: skewx(30deg);
+}
+breadcrumb li:after,
+.breadcrumb li:after {
+  bottom: 0;
+  top: auto;
+  -webkit-transform: skewx(-30deg);
+  -moz-transform: skewx(-30deg);
+  -ms-transform: skewx(-30deg);
+  -o-transform: skewx(-30deg);
+}
+breadcrumb li:last-of-type:before,
+.breadcrumb li:last-of-type:before,
+breadcrumb li:last-of-type:after,
+.breadcrumb li:last-of-type:after {
+  display: none;
+}
+/* Useful panels to remark important information, you can also use 'span' with 'panel' class.
+   This component needs to have their width specified;
+
+  <panel class="c4">
+      <p class="title">Sample title</p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+          Integer vulputate turpis a turpis consectetur euismod. 
+          Sed sit amet quam et eros dignissim euismod.
+        </p>
+    </panel>
+*/
+panel,
+.panel {
+  border: 2px solid #cec4cc;
+  padding: 10px;
+  background-color: #e5e0e4;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  background-clip: padding-box;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+}
+panel .title,
+.panel .title {
+  color: #9f8d9c;
+  font-weight: 700;
+  font-size: 1.2em;
+  padding: 0 20px 0 20px;
+}
+panel p,
+.panel p {
+  color: #6c5a68;
+  padding: 0 20px 0 20px;
+}
+/* This component implements tabs whith custom elements: 'tab-host' and 'tab'. 
+   You also can usan 'div' instead 'tab-host' and 'tab';
+
+  <tab-host>
+       <tab>
+           <input type="radio" id="tab-1" name="tab-group-1" checked>
+           <label for="tab-1">Tab One</label>
+           
+           <div class="tab-content">
+               content 1
+           </div> 
+       </tab>
+       <tab>
+           <input type="radio" id="tab-2" name="tab-group-1">
+           <label for="tab-2">Tab Two</label>
+           
+           <div class="tab-content">
+               content 2
+           </div> 
+       </tab>
+        <tab>
+           <input type="radio" id="tab-3" name="tab-group-1">
+           <label for="tab-3">Tab Three</label>
+         
+           <div class="tab-content">
+               content 3
+           </div> 
+       </tab>
+      </tab-host>
+*/
+tab-host,
+.tab-host {
+  position: relative;
+  min-height: 200px;
+  clear: both;
+  margin: 25px 0;
+}
+tab-host tab,
+.tab-host tab,
+tab-host .tab,
+.tab-host .tab {
+  float: left;
+}
+tab-host tab:first-child label,
+.tab-host tab:first-child label,
+tab-host .tab:first-child label,
+.tab-host .tab:first-child label {
+  -webkit-border-top-right-radius: 0;
+  border-top-right-radius: 0;
+  -webkit-border-bottom-right-radius: 0;
+  border-bottom-right-radius: 0;
+  -webkit-border-bottom-left-radius: 0;
+  border-bottom-left-radius: 0;
+  -webkit-border-top-left-radius: 5px;
+  border-top-left-radius: 5px;
+  background-clip: padding-box;
+  -moz-border-radius-topright: 0;
+  -moz-border-radius-bottomright: 0;
+  -moz-border-radius-bottomleft: 0;
+  -moz-border-radius-topleft: 5px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+}
+tab-host tab:last-child label,
+.tab-host tab:last-child label,
+tab-host .tab:last-child label,
+.tab-host .tab:last-child label {
+  -webkit-border-top-right-radius: 5px;
+  border-top-right-radius: 5px;
+  -webkit-border-bottom-right-radius: 0;
+  border-bottom-right-radius: 0;
+  -webkit-border-bottom-left-radius: 0;
+  border-bottom-left-radius: 0;
+  -webkit-border-top-left-radius: 0;
+  border-top-left-radius: 0;
+  background-clip: padding-box;
+  -moz-border-radius-topright: 5px;
+  -moz-border-radius-bottomright: 0;
+  -moz-border-radius-bottomleft: 0;
+  -moz-border-radius-topleft: 0;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+}
+tab-host tab label,
+.tab-host tab label,
+tab-host .tab label,
+.tab-host .tab label {
+  background: #e5e0e4;
+  padding: 10px;
+  border: 1px solid #979797;
+  border-bottom: 0px;
+  margin-left: -1px;
+  position: relative;
+  left: 1px;
+}
+tab-host tab [type=radio],
+.tab-host tab [type=radio],
+tab-host .tab [type=radio],
+.tab-host .tab [type=radio] {
+  display: none;
+}
+tab-host tab [type=radio]:checked ~ label,
+.tab-host tab [type=radio]:checked ~ label,
+tab-host .tab [type=radio]:checked ~ label,
+.tab-host .tab [type=radio]:checked ~ label {
+  background: #ffffff;
+  border-bottom: 1px solid white;
+  z-index: 2;
+}
+tab-host tab [type=radio]:checked ~ label ~ .tab-content,
+.tab-host tab [type=radio]:checked ~ label ~ .tab-content,
+tab-host .tab [type=radio]:checked ~ label ~ .tab-content,
+.tab-host .tab [type=radio]:checked ~ label ~ .tab-content {
+  z-index: 1;
+}
+tab-host tab .tab-content,
+.tab-host tab .tab-content,
+tab-host .tab .tab-content,
+.tab-host .tab .tab-content {
+  position: absolute;
+  top: 31px;
+  left: 0;
+  background: #ffffff;
+  right: 0;
+  bottom: 0;
+  padding: 20px;
+  border: 1px solid #979797;
+  -webkit-border-top-right-radius: 5px;
+  border-top-right-radius: 5px;
+  -webkit-border-bottom-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  -webkit-border-bottom-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  -webkit-border-top-left-radius: 0;
+  border-top-left-radius: 0;
+  background-clip: padding-box;
+  -moz-border-radius-topright: 5px;
+  -moz-border-radius-bottomright: 5px;
+  -moz-border-radius-bottomleft: 5px;
+  -moz-border-radius-topleft: 0;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+}
+/* A custom collapsable accordion with custom 'acoordion' tab, but you can use 'div' instead;
+
+  <accordion>
+    <div>
+      <input id="ac-1" name="accordion-1" type="checkbox" checked/>
+      <label for="ac-1">One</label>
+      <article>
+        <p>
+          En un lugar de la Mancha, de cuyo nombre no quiero acordarme, 
+          no ha mucho tiempo que vivía un hidalgo de los de lanza en astillero, 
+          adarga antigua, rocín flaco y galgo corredor.
+        </p>
+            </article>
+        </div>
+        <div>
+            <input id="ac-2" name="accordion-1" type="checkbox"/>
+            <label for="ac-2">Two</label>
+            <article>
+              <p>
+                Una olla de algo más vaca que carnero, salpicón las más noches, 
+                duelos y quebrantos los sábados, lantejas los viernes, algún palomino de añadidura los domingos, 
+                consumían las tres partes de su hacienda.
+              </p>
+            </article>
+        </div>
+        <div>
+          <input id="ac-3" name="accordion-1" type="checkbox" />
+          <label for="ac-3">Three</label>
+            <article>
+              <p>
+          El resto della concluían sayo de velarte, calzas de velludo para las fiestas, 
+          con sus pantuflos de lo mesmo, y los días de entresemana se honraba con su vellorí de lo más fino.
+              </p>
+            </article>
+        </div>
+    </accordion>
+*/
+accordion,
+.accordion {
+  border: 1px solid #979797;
+  width: auto;
+  margin: 10px auto 10px auto;
+  text-align: left;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  background-clip: padding-box;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+}
+accordion input,
+.accordion input {
+  display: none;
+}
+accordion div:first-child label,
+.accordion div:first-child label {
+  border-top: 1px;
+  -webkit-border-top-right-radius: 5px;
+  border-top-right-radius: 5px;
+  -webkit-border-bottom-right-radius: 0;
+  border-bottom-right-radius: 0;
+  -webkit-border-bottom-left-radius: 0;
+  border-bottom-left-radius: 0;
+  -webkit-border-top-left-radius: 5px;
+  border-top-left-radius: 5px;
+  background-clip: padding-box;
+  -moz-border-radius-topright: 5px;
+  -moz-border-radius-bottomright: 0;
+  -moz-border-radius-bottomleft: 0;
+  -moz-border-radius-topleft: 5px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+}
+accordion div:last-child label,
+.accordion div:last-child label {
+  border-bottom: 1px;
+  margin-bottom: 1px;
+  -webkit-border-top-right-radius: 0;
+  border-top-right-radius: 0;
+  -webkit-border-bottom-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  -webkit-border-bottom-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  -webkit-border-top-left-radius: 0;
+  border-top-left-radius: 0;
+  background-clip: padding-box;
+  -moz-border-radius-topright: 0;
+  -moz-border-radius-bottomright: 5px;
+  -moz-border-radius-bottomleft: 5px;
+  -moz-border-radius-topleft: 0;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+}
+accordion label,
+.accordion label {
+  padding: 5px;
+  position: relative;
+  z-index: 900;
+  display: block;
+  cursor: pointer;
+  color: #979797;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#e5e0e4));
+  background: -webkit-linear-gradient(top, #ffffff, #e5e0e4);
+  background: -moz-linear-gradient(top, #ffffff, #e5e0e4);
+  background: -ms-linear-gradient(top, #ffffff, #e5e0e4);
+  background: -o-linear-gradient(top, #ffffff, #e5e0e4);
+  background-color: #ffffff;
+}
+accordion label:hover,
+.accordion label:hover {
+  -webkit-box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+  box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+  background: -webkit-gradient(linear, left top, left bottom, from(#e5e0e4), to(#e5e0e4));
+  background: -webkit-linear-gradient(top, #e5e0e4, #e5e0e4);
+  background: -moz-linear-gradient(top, #e5e0e4, #e5e0e4);
+  background: -ms-linear-gradient(top, #e5e0e4, #e5e0e4);
+  background: -o-linear-gradient(top, #e5e0e4, #e5e0e4);
+  background-color: #e5e0e4;
+}
+accordion label:hover:after,
+.accordion label:hover:after {
+  content: '▼';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  right: 5px;
+  top: 5px;
+}
+accordion input:checked label:hover:after,
+.accordion input:checked label:hover:after {
+  content: '▼';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  right: 5px;
+  top: 5px;
+}
+accordion input:checked ~ article,
+.accordion input:checked ~ article {
+  height: auto;
+}
+accordion input:checked + label,
+.accordion input:checked + label {
+  background: #c6e1ec;
+  color: #3d7489;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+}
+accordion input:checked + label:hover,
+.accordion input:checked + label:hover {
+  background: #c6e1ec;
+  color: #3d7489;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+}
+accordion input:checked + label:hover:after,
+.accordion input:checked + label:hover:after {
+  content: '▲';
+}
+accordion article,
+.accordion article {
+  background: #ffffff;
+  margin-top: -1px;
+  overflow: hidden;
+  height: 0px;
+  position: relative;
+  z-index: 800;
+}
+accordion article p,
+.accordion article p {
+  font-style: italic;
+  color: #181818;
+  padding: 15px;
+}
+/* Styled and responsive tables, needs that you put 'data-title' on each 'td';
+
+  <table>
+      <thead>
+        <tr>
+          <th>Code</th><th>Company</th><th>Price</th><th>Change</th><th>Change</th>
+          <th>Open</th><th>High</th><th>Low</th><th>Volume</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td data-title="Code">AAC</td>
+          <td data-title="Company">AUSTRALIAN AGRICULTURAL COMPANY LIMITED.</td>
+          <td data-title="Price" class="numeric">$1.38</td>
+          <td data-title="Change" class="numeric">-0.01</td>
+          <td data-title="Change %" class="numeric">-0.36%</td>
+          <td data-title="Open" class="numeric">$1.39</td>
+          <td data-title="High" class="numeric">$1.39</td>
+          <td data-title="Low" class="numeric">$1.38</td>
+          <td data-title="Volume" class="numeric">9,395</td>
+        </tr>
+        <tr>
+          <td data-title="Code">DAC</td>
+          <td data-title="Company">DUSTRALIAN AGRICULTURAL COMPANY LIMITED.</td>
+          <td data-title="Price" class="numeric">$1.38</td>
+          <td data-title="Change" class="numeric">-0.02</td>
+          <td data-title="Change %" class="numeric">-0.36%</td>
+          <td data-title="Open" class="numeric">$1.39</td>
+          <td data-title="High" class="numeric">$1.39</td>
+          <td data-title="Low" class="numeric">$1.38</td>
+          <td data-title="Volume" class="numeric">9,395</td>
+        </tr>
+        <tr>
+          <td data-title="Code">EAC</td>
+          <td data-title="Company">EUSTRALIAN AGRICULTURAL COMPANY LIMITED.</td>
+          <td data-title="Price" class="numeric">$2.38</td>
+          <td data-title="Change" class="numeric">-0.03</td>
+          <td data-title="Change %" class="numeric">-0.36%</td>
+          <td data-title="Open" class="numeric">$1.39</td>
+          <td data-title="High" class="numeric">$1.39</td>
+          <td data-title="Low" class="numeric">$1.38</td>
+          <td data-title="Volume" class="numeric">9,395</td>
+        </tr>
+        <tr>
+          <td data-title="Code">FAC</td>
+          <td data-title="Company">FUSTRALIAN AGRICULTURAL COMPANY LIMITED.</td>
+          <td data-title="Price" class="numeric">$4.38</td>
+          <td data-title="Change" class="numeric">-0.04</td>
+          <td data-title="Change %" class="numeric">-0.36%</td>
+          <td data-title="Open" class="numeric">$1.39</td>
+          <td data-title="High" class="numeric">$1.39</td>
+          <td data-title="Low" class="numeric">$1.38</td>
+          <td data-title="Volume" class="numeric">9,395</td>
+        </tr>
+      </tbody>
+    </table>
+*/
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+tr:nth-of-type(odd) {
+  background: #f9f9f9;
+}
+th {
+  background: #f1eef0;
+  font-weight: bold;
+}
+td,
+th {
+  padding: 6px;
+  border-bottom: 1px solid #b1b1b1;
+  text-align: left;
+}
+
+/* Pagination list-based component;
+
+
+  <ul class="pagination">
+      <li class="prev"><a href="">&laquo;</a></li>
+      <li class="current"><a href="">1</a></li>
+      <li><a href="">2</a></li>
+      <li><a href="">3</a></li>
+      <li><a href="">4</a></li>
+      <li><a href="">&hellip;</a></li>
+      <li><a href="">12</a></li>
+      <li><a href="">13</a></li>
+      <li class="next"><a href="">&raquo;</a></li>
+    </ul>
+*/
+pagination,
+.pagination {
+  display: inline;
+}
+pagination li,
+.pagination li {
+  display: inline;
+  list-style: none;
+  padding: 5px;
+  border: 1px solid #979797;
+}
+pagination li a,
+.pagination li a {
+  color: #979797;
+  text-decoration: none;
+}
+pagination li:first-child,
+.pagination li:first-child {
+  padding-right: 5px;
+  border-right: 1px solid #979797;
+  -webkit-border-top-right-radius: 0;
+  border-top-right-radius: 0;
+  -webkit-border-bottom-right-radius: 0;
+  border-bottom-right-radius: 0;
+  -webkit-border-bottom-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  -webkit-border-top-left-radius: 5px;
+  border-top-left-radius: 5px;
+  background-clip: padding-box;
+  -moz-border-radius-topright: 0;
+  -moz-border-radius-bottomright: 0;
+  -moz-border-radius-bottomleft: 5px;
+  -moz-border-radius-topleft: 5px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+}
+pagination li:last-child,
+.pagination li:last-child {
+  padding-left: 5px;
+  border-left: 1px solid #979797;
+  -webkit-border-top-right-radius: 5px;
+  border-top-right-radius: 5px;
+  -webkit-border-bottom-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  -webkit-border-bottom-left-radius: 0;
+  border-bottom-left-radius: 0;
+  -webkit-border-top-left-radius: 0;
+  border-top-left-radius: 0;
+  background-clip: padding-box;
+  -moz-border-radius-topright: 5px;
+  -moz-border-radius-bottomright: 5px;
+  -moz-border-radius-bottomleft: 0;
+  -moz-border-radius-topleft: 0;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+}
+pagination .current,
+.pagination .current {
+  display: none;
+}
+/* Modal component to show full-screen messages. You can use 'div' instead 'modal'. (Don't work on docummentation page);
+
+  <a href="#open">Open modal message</a>
+    <modal id="open">
+      <div>
+        <div class="title">
+          Modal message
+          <a href="#close" class="close">&times;</a>
+        </div>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+          Proin molestie, justo a fermentum placerat, nisi metus consectetur metus, 
+          vel aliquet massa neque sit amet ipsum. Vestibulum non dolor turpis. 
+          Fusce convallis odio vitae orci commodo consectetur.
+        </p>
+        <div class="commands">
+          <button class="btn-green" type="submit">Ok</button>
+          <button class="btn-gray">Cancel</button>
+        </div>
+      </div>
+    </modal>
+*/
+modal,
+.modal {
+  z-index: 10001;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  pointer-events: none;
+  opacity: 0;
+  -webkit-opacity: 0;
+  -moz-opacity: 0;
+  -webkit-transition: opacity 300ms ease-in;
+  -moz-transition: opacity 300ms ease-in;
+  -ms-transition: opacity 300ms ease-in;
+  -o-transition: opacity 300ms ease-in;
+}
+modal:target,
+.modal:target {
+  pointer-events: auto;
+  opacity: 1;
+  -webkit-opacity: 1;
+  -moz-opacity: 1;
+}
+modal p,
+.modal p {
+  padding: 5px 20px 10px 20px;
+}
+modal .title,
+.modal .title {
+  position: relative;
+  font-weight: bold;
+  border-bottom: 1px solid #979797;
+  padding: 5px 10px 5px 10px;
+}
+modal > div,
+.modal > div {
+  z-index: 10002;
+  position: relative;
+  width: 400px;
+  margin: 10% auto;
+  border-bottom: 1px solid #979797;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  background-clip: padding-box;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#e5e0e4));
+  background: -webkit-linear-gradient(top, #ffffff, #e5e0e4);
+  background: -moz-linear-gradient(top, #ffffff, #e5e0e4);
+  background: -ms-linear-gradient(top, #ffffff, #e5e0e4);
+  background: -o-linear-gradient(top, #ffffff, #e5e0e4);
+  background-color: #ffffff;
+}
+modal .commands,
+.modal .commands {
+  position: relative;
+  border-top: 1px solid #979797;
+  padding-top: 5px;
+  padding: 5px 10px 5px 10px;
+  text-align: right;
+}
+modal .close,
+.modal .close {
+  position: absolute;
+  right: 8px;
+  top: 5px;
+  width: 24px;
+  text-align: center;
+  text-decoration: none;
+  border: 1px solid #979797;
+  color: #979797;
+  font-weight: 400;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#e5e0e4));
+  background: -webkit-linear-gradient(top, #ffffff, #e5e0e4);
+  background: -moz-linear-gradient(top, #ffffff, #e5e0e4);
+  background: -ms-linear-gradient(top, #ffffff, #e5e0e4);
+  background: -o-linear-gradient(top, #ffffff, #e5e0e4);
+  background-color: #ffffff;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  background-clip: padding-box;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  color: #ffffff;
+  background: -webkit-gradient(linear, left top, left bottom, from(#cdcdcd), to(#676767));
+  background: -webkit-linear-gradient(top, #cdcdcd, #676767);
+  background: -moz-linear-gradient(top, #cdcdcd, #676767);
+  background: -ms-linear-gradient(top, #cdcdcd, #676767);
+  background: -o-linear-gradient(top, #cdcdcd, #676767);
+  background-color: #cdcdcd;
+}
+modal .close:hover,
+.modal .close:hover {
+  background: -webkit-gradient(linear, left top, left bottom, from(#e5e0e4), to(#e5e0e4));
+  background: -webkit-linear-gradient(top, #e5e0e4, #e5e0e4);
+  background: -moz-linear-gradient(top, #e5e0e4, #e5e0e4);
+  background: -ms-linear-gradient(top, #e5e0e4, #e5e0e4);
+  background: -o-linear-gradient(top, #e5e0e4, #e5e0e4);
+  background-color: #e5e0e4;
+  -webkit-box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+  box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+}
+modal .close:hover,
+.modal .close:hover {
+  background: -webkit-gradient(linear, left top, left bottom, from(#676767), to(#676767));
+  background: -webkit-linear-gradient(top, #676767, #676767);
+  background: -moz-linear-gradient(top, #676767, #676767);
+  background: -ms-linear-gradient(top, #676767, #676767);
+  background: -o-linear-gradient(top, #676767, #676767);
+  background-color: #676767;
+}
+/* Custom 2 level dropdown component. 
+   Default is displayed on the right, but you can set to be deployed on the left using 'left' class on 'ul' element;
+
+  <ul class="dropdown">
+      <li><a class="drop" href="#">Parent</a>
+        <ul>
+          <li><a href="#">Chlid 1</a>
+          <li><a href="#">Child 2</a>
+          <li><a href="#">Child 3</a>
+          <li><a class="drop" href="#">Parent</a>
+            <ul><!-- or class="left" -->
+              <li><a href="#">Chlid 1</a>
+              <li><a href="#">Chlid 2</li>
+              <li><a href="#">Chlid 3</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+*/
+dropdown,
+.dropdown {
+  position: relative;
+  list-style-type: none;
+}
+dropdown ul,
+.dropdown ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  background-clip: padding-box;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+}
+dropdown li,
+.dropdown li {
+  float: left;
+  position: relative;
+}
+dropdown li .drop:after,
+.dropdown li .drop:after {
+  margin: 5px;
+  font-size: 10px;
+  content: '▼';
+}
+dropdown li a,
+.dropdown li a {
+  display: block;
+  text-decoration: none;
+  color: #000000;
+}
+dropdown li a:hover,
+.dropdown li a:hover {
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+}
+dropdown li ul,
+.dropdown li ul {
+  visibility: hidden;
+  position: absolute;
+  top: 2.5em;
+  left: 0;
+  height: 0;
+  overflow: hidden;
+  border: 1px solid #979797;
+}
+dropdown li:hover ul,
+.dropdown li:hover ul,
+dropdown li a:hover ul,
+.dropdown li a:hover ul {
+  visibility: visible;
+  height: auto;
+  width: 10em;
+  background: #ffffff;
+  border: 1 px solid #979797;
+  left: 0;
+  top: 1.5em;
+  overflow: visible;
+}
+dropdown li:hover ul li:hover ul,
+.dropdown li:hover ul li:hover ul,
+dropdown li a:hover ul li:hover ul,
+.dropdown li a:hover ul li:hover ul,
+dropdown li:hover ul li a:hover ul,
+.dropdown li:hover ul li a:hover ul,
+dropdown li a:hover ul li a:hover ul,
+.dropdown li a:hover ul li a:hover ul {
+  visibility: visible;
+  color: #000000;
+  border: 1px solid #979797;
+  height: auto;
+  background: #ffffff;
+  width: 10em;
+}
+dropdown li:hover ul li a,
+.dropdown li:hover ul li a,
+dropdown li a:hover ul li a,
+.dropdown li a:hover ul li a {
+  display: block;
+  font-weight: normal;
+  background: transparent;
+  text-decoration: none;
+  height: auto;
+  padding: 0.2em 0.5em 0.2em;
+  width: 9.5em;
+}
+dropdown li:hover ul li:hover ul,
+.dropdown li:hover ul li:hover ul,
+dropdown li a:hover ul li:hover ul,
+.dropdown li a:hover ul li:hover ul,
+dropdown li:hover ul li a:hover ul,
+.dropdown li:hover ul li a:hover ul,
+dropdown li a:hover ul li a:hover ul,
+.dropdown li a:hover ul li a:hover ul {
+  left: 9.3em;
+}
+dropdown li:hover ul li:hover ul .left,
+.dropdown li:hover ul li:hover ul .left,
+dropdown li a:hover ul li:hover ul .left,
+.dropdown li a:hover ul li:hover ul .left,
+dropdown li:hover ul li a:hover ul .left,
+.dropdown li:hover ul li a:hover ul .left,
+dropdown li a:hover ul li a:hover ul .left,
+.dropdown li a:hover ul li a:hover ul .left {
+  left: -9.3em;
+}
+dropdown li:hover ul li ul,
+.dropdown li:hover ul li ul,
+dropdown li a:hover ul li ul,
+.dropdown li a:hover ul li ul,
+dropdown li:hover li a:hover ul li a ul,
+.dropdown li:hover li a:hover ul li a ul,
+dropdown li a:hover li a:hover ul li a ul,
+.dropdown li a:hover li a:hover ul li a ul {
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 9em;
+  height: 0;
+  overflow: hidden;
+}
+
+/* Component to show beautifull thumbnails;
+
+  <div class="thumbnail">
+       <img src="http://cambelt.co/200x200g">
+       <div class="details">
+         <h6>Image tittle</h6>
+         <p>This the image description for this awesome image.</p>
+       </div>
+    </div>
+*/
+thumbnail,
+.thumbnail {
+  display: inline-block;
+  border: 1px solid #979797;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  background-clip: padding-box;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  width: 200px;
+  position: relative;
+  padding: 0;
+}
+thumbnail img,
+.thumbnail img {
+  overflow: hidden;
+}
+thumbnail .details,
+.thumbnail .details {
+  float: left;
+  font-size: 12px;
+  padding: 0 10px;
+  margin: 10px 3px 0;
+  display: block;
+  overflow: hidden;
+}
+thumbnail .details h6,
+.thumbnail .details h6 {
+  width: 100%;
+  float: left;
+  margin: -5px 3px 5px;
+  border-bottom: 1px solid #979797;
+}
+
+/**
+ * Responsive.less
+ *
+ * Media queries file.
+ *
+ * @project Zimit Framework
+ * @version 0.9.8
+ * @author Jorge Garrido Oval, firezenk@gmail.com
+ * @copyright 2012
+ * @license MIT
+ */
+main,
+.content {
+  width: 960px;
+}
+.row {
+  margin: 0 auto;
+  width: 960px;
+  overflow: hidden;
+}
+.row .row {
+  margin: 0 -16px 0 -16px;
+  width: auto;
+  display: inline-block;
+}
+.c1 {
+  width: 48px;
+  margin: 0 16px 0 16px;
+  overflow: hidden;
+  float: left;
+  display: inline;
+}
+.c2 {
+  width: 128px;
+  margin: 0 16px 0 16px;
+  overflow: hidden;
+  float: left;
+  display: inline;
+}
+.c3 {
+  width: 208px;
+  margin: 0 16px 0 16px;
+  overflow: hidden;
+  float: left;
+  display: inline;
+}
+.c4 {
+  width: 288px;
+  margin: 0 16px 0 16px;
+  overflow: hidden;
+  float: left;
+  display: inline;
+}
+.c5 {
+  width: 368px;
+  margin: 0 16px 0 16px;
+  overflow: hidden;
+  float: left;
+  display: inline;
+}
+.c6 {
+  width: 448px;
+  margin: 0 16px 0 16px;
+  overflow: hidden;
+  float: left;
+  display: inline;
+}
+.c7 {
+  width: 528px;
+  margin: 0 16px 0 16px;
+  overflow: hidden;
+  float: left;
+  display: inline;
+}
+.c8 {
+  width: 608px;
+  margin: 0 16px 0 16px;
+  overflow: hidden;
+  float: left;
+  display: inline;
+}
+.c9 {
+  width: 688px;
+  margin: 0 16px 0 16px;
+  overflow: hidden;
+  float: left;
+  display: inline;
+}
+.c10 {
+  width: 768px;
+  margin: 0 16px 0 16px;
+  overflow: hidden;
+  float: left;
+  display: inline;
+}
+.c11 {
+  width: 848px;
+  margin: 0 16px 0 16px;
+  overflow: hidden;
+  float: left;
+  display: inline;
+}
+.c12 {
+  width: 928px;
+  margin: 0 16px 0 16px;
+  overflow: hidden;
+  float: left;
+  display: inline;
+}
+.row > .o1 {
+  margin-left: 96px;
+}
+.row > .o2 {
+  margin-left: 176px;
+}
+.row > .o3 {
+  margin-left: 256px;
+}
+.row > .o4 {
+  margin-left: 336px;
+}
+.row > .o5 {
+  margin-left: 416px;
+}
+.row > .o6 {
+  margin-left: 496px;
+}
+.row > .o7 {
+  margin-left: 576px;
+}
+.row > .o8 {
+  margin-left: 656px;
+}
+.row > .o9 {
+  margin-left: 736px;
+}
+.row > .o10 {
+  margin-left: 816px;
+}
+.row > .o11 {
+  margin-left: 896px;
+}
+.show-on-desktop {
+  visibility: visible;
+}
+.show-on-tablet {
+  visibility: visible;
+}
+.show-on-phone {
+  visibility: visible;
+}
+.hide-on-desktop {
+  visibility: hidden;
+}
+.hide-on-tablet {
+  visibility: hidden;
+}
+.hide-on-phone {
+  visibility: hidden;
+}
+@media only screen and (min-width: 1200px) {
+  main,
+  .content {
+    width: 1200px;
+    /* webkit */
+  
+    -webkit-animation-property: -webkit-width;
+    -webkit-animation-property: -webkit-height;
+    -webkit-transition-duration: 1s;
+    /* moz */
+  
+    -moz-animation-property: -moz-width;
+    -moz-animation-property: -moz-height;
+    -moz-transition-duration: 1s;
+    /* opera */
+  
+    -o-animation-property: -o-width;
+    -o-animation-property: -o-height;
+    -o-transition-duration: 1s;
+  }
+  .row {
+    margin: 0 auto;
+    width: 1200px;
+    overflow: hidden;
+  }
+  .row .row {
+    margin: 0 -20px 0 -20px;
+    width: auto;
+    display: inline-block;
+  }
+  .c1 {
+    width: 60px;
+    margin: 0 20px 0 20px;
+    overflow: hidden;
+    float: left;
+    display: inline;
+  }
+  .c2 {
+    width: 160px;
+    margin: 0 20px 0 20px;
+    overflow: hidden;
+    float: left;
+    display: inline;
+  }
+  .c3 {
+    width: 260px;
+    margin: 0 20px 0 20px;
+    overflow: hidden;
+    float: left;
+    display: inline;
+  }
+  .c4 {
+    width: 360px;
+    margin: 0 20px 0 20px;
+    overflow: hidden;
+    float: left;
+    display: inline;
+  }
+  .c5 {
+    width: 460px;
+    margin: 0 20px 0 20px;
+    overflow: hidden;
+    float: left;
+    display: inline;
+  }
+  .c6 {
+    width: 560px;
+    margin: 0 20px 0 20px;
+    overflow: hidden;
+    float: left;
+    display: inline;
+  }
+  .c7 {
+    width: 660px;
+    margin: 0 20px 0 20px;
+    overflow: hidden;
+    float: left;
+    display: inline;
+  }
+  .c8 {
+    width: 760px;
+    margin: 0 20px 0 20px;
+    overflow: hidden;
+    float: left;
+    display: inline;
+  }
+  .c9 {
+    width: 860px;
+    margin: 0 20px 0 20px;
+    overflow: hidden;
+    float: left;
+    display: inline;
+  }
+  .c10 {
+    width: 960px;
+    margin: 0 20px 0 20px;
+    overflow: hidden;
+    float: left;
+    display: inline;
+  }
+  .c11 {
+    width: 1060px;
+    margin: 0 20px 0 20px;
+    overflow: hidden;
+    float: left;
+    display: inline;
+  }
+  .c12 {
+    width: 1160px;
+    margin: 0 20px 0 20px;
+    overflow: hidden;
+    float: left;
+    display: inline;
+  }
+  .row > .o1 {
+    margin-left: 120px;
+  }
+  .row > .o2 {
+    margin-left: 220px;
+  }
+  .row > .o3 {
+    margin-left: 320px;
+  }
+  .row > .o4 {
+    margin-left: 420px;
+  }
+  .row > .o5 {
+    margin-left: 520px;
+  }
+  .row > .o6 {
+    margin-left: 620px;
+  }
+  .row > .o7 {
+    margin-left: 720px;
+  }
+  .row > .o8 {
+    margin-left: 820px;
+  }
+  .row > .o9 {
+    margin-left: 920px;
+  }
+  .row > .o10 {
+    margin-left: 1020px;
+  }
+  .row > .o11 {
+    margin-left: 1120px;
+  }
+  /* Responsive headers */
+  h1 {
+    font-size: 3.6em;
+  }
+  h2 {
+    font-size: 3.0em;
+  }
+  h3 {
+    font-size: 2.4em;
+  }
+  h4 {
+    font-size: 1.8em;
+  }
+  h5 {
+    font-size: 1.6em;
+  }
+  h6 {
+    font-size: 1.4em;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+  main,
+  .content {
+    width: 768px;
+    -webkit-animation-property: -webkit-width;
+    -webkit-animation-property: -webkit-height;
+    -webkit-transition-duration: 1s;
+    -moz-animation-property: -moz-width;
+    -moz-animation-property: -moz-height;
+    -moz-transition-duration: 1s;
+    -o-animation-property: -o-width;
+    -o-animation-property: -o-height;
+    -o-transition-duration: 1s;
+  }
+  .row {
+    margin: 0 auto;
+    width: 768px;
+    overflow: hidden;
+  }
+  .row .row {
+    margin: 0 -14px 0 -14px;
+    width: auto;
+    display: inline-block;
+  }
+  .c1 {
+    width: 36px;
+    margin: 0 14px 0 14px;
+    overflow: hidden;
+    float: left;
+    display: inline;
+  }
+  .c2 {
+    width: 100px;
+    margin: 0 14px 0 14px;
+    overflow: hidden;
+    float: left;
+    display: inline;
+  }
+  .c3 {
+    width: 164px;
+    margin: 0 14px 0 14px;
+    overflow: hidden;
+    float: left;
+    display: inline;
+  }
+  .c4 {
+    width: 228px;
+    margin: 0 14px 0 14px;
+    overflow: hidden;
+    float: left;
+    display: inline;
+  }
+  .c5 {
+    width: 292px;
+    margin: 0 14px 0 14px;
+    overflow: hidden;
+    float: left;
+    display: inline;
+  }
+  .c6 {
+    width: 356px;
+    margin: 0 14px 0 14px;
+    overflow: hidden;
+    float: left;
+    display: inline;
+  }
+  .c7 {
+    width: 420px;
+    margin: 0 14px 0 14px;
+    overflow: hidden;
+    float: left;
+    display: inline;
+  }
+  .c8 {
+    width: 484px;
+    margin: 0 14px 0 14px;
+    overflow: hidden;
+    float: left;
+    display: inline;
+  }
+  .c9 {
+    width: 548px;
+    margin: 0 14px 0 14px;
+    overflow: hidden;
+    float: left;
+    display: inline;
+  }
+  .c10 {
+    width: 612px;
+    margin: 0 14px 0 14px;
+    overflow: hidden;
+    float: left;
+    display: inline;
+  }
+  .c11 {
+    width: 676px;
+    margin: 0 14px 0 14px;
+    overflow: hidden;
+    float: left;
+    display: inline;
+  }
+  .c12 {
+    width: 740px;
+    margin: 0 14px 0 14px;
+    overflow: hidden;
+    float: left;
+    display: inline;
+  }
+  .row > .o1 {
+    margin-left: 72px;
+  }
+  .row > .o2 {
+    margin-left: 136px;
+  }
+  .row > .o3 {
+    margin-left: 200px;
+  }
+  .row > .o4 {
+    margin-left: 264px;
+  }
+  .row > .o5 {
+    margin-left: 328px;
+  }
+  .row > .o6 {
+    margin-left: 392px;
+  }
+  .row > .o7 {
+    margin-left: 456px;
+  }
+  .row > .o8 {
+    margin-left: 520px;
+  }
+  .row > .o9 {
+    margin-left: 584px;
+  }
+  .row > .o10 {
+    margin-left: 648px;
+  }
+  .row > .o11 {
+    margin-left: 712px;
+  }
+  h1 {
+    font-size: 3.6em;
+  }
+  h2 {
+    font-size: 3.0em;
+  }
+  h3 {
+    font-size: 2.4em;
+  }
+  h4 {
+    font-size: 1.8em;
+  }
+  h5 {
+    font-size: 1.6em;
+  }
+  h6 {
+    font-size: 1.4em;
+  }
+}
+@media only screen and (max-width: 479px) {
+  main,
+  .content {
+    width: 300px;
+    /* webkit */
+  
+    -webkit-animation-property: -webkit-width;
+    -webkit-animation-property: -webkit-height;
+    -webkit-transition-duration: 1s;
+    /* moz */
+  
+    -moz-animation-property: -moz-width;
+    -moz-animation-property: -moz-height;
+    -moz-transition-duration: 1s;
+    /* opera */
+  
+    -o-animation-property: -o-width;
+    -o-animation-property: -o-height;
+    -o-transition-duration: 1s;
+  }
+  .row {
+    margin: 0 auto;
+    width: 300px;
+    overflow: hidden;
+  }
+  .row .row {
+    margin: 0;
+    width: auto;
+    display: inline-block;
+  }
+  .c1,
+  .c2,
+  .c3,
+  .c4,
+  .c5,
+  .c6,
+  .c7,
+  .c8,
+  .c9,
+  .c10,
+  .c11,
+  .c12 {
+    width: 300px;
+    margin: 10px 0 0 0;
+    overflow: hidden;
+    float: left;
+    display: inline;
+  }
+  .row > .o1,
+  .row > .o2,
+  .row > .o3,
+  .row > .o4,
+  .row > .o5,
+  .row > .o6,
+  .row > .o7,
+  .row > .o8,
+  .row > .o9,
+  .row > .o10,
+  .row > .o11 {
+    margin-left: 0;
+  }
+  main .fix,
+  .content .fix {
+    position: relative;
+  }
+  h1 {
+    font-size: 3.4em;
+  }
+  h2 {
+    font-size: 2.8em;
+  }
+  h3 {
+    font-size: 2.2em;
+  }
+  h4 {
+    font-size: 1.6em;
+  }
+  h5 {
+    font-size: 1.4em;
+  }
+  h6 {
+    font-size: 1.2em;
+  }
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+  }
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  tr {
+    border: 1px solid #979797;
+  }
+  tr:nth-of-type(odd) {
+    background: #f9f9f9;
+  }
+  td {
+    border: none;
+    border-bottom: 1px solid #979797;
+    position: relative;
+    padding-left: 50%;
+    white-space: normal;
+    text-align: left;
+  }
+  td:before {
+    content: attr(data-title);
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+    text-align: left;
+    font-weight: bold;
+  }
+}
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+  main,
+  .content {
+    width: 456px;
+    -webkit-animation-property: -webkit-width;
+    -webkit-animation-property: -webkit-height;
+    -webkit-transition-duration: 1s;
+    -moz-animation-property: -moz-width;
+    -moz-animation-property: -moz-height;
+    -moz-transition-duration: 1s;
+    -o-animation-property: -o-width;
+    -o-animation-property: -o-height;
+    -o-transition-duration: 1s;
+  }
+  .row {
+    margin: 0 auto;
+    width: 456px;
+    overflow: hidden;
+  }
+  .row .row {
+    margin: 0;
+    width: auto;
+    display: inline-block;
+  }
+  .c1,
+  .c2,
+  .c3,
+  .c4,
+  .c5,
+  .c6,
+  .c7,
+  .c8,
+  .c9,
+  .c10,
+  .c11,
+  .c12 {
+    width: 456px;
+    margin: 10px 0 0 0;
+    overflow: hidden;
+    float: left;
+    display: inline;
+  }
+  .row > .o1,
+  .row > .o2,
+  .row > .o3,
+  .row > .o4,
+  .row > .o5,
+  .row > .o6,
+  .row > .o7,
+  .row > .o8,
+  .row > .o9,
+  .row > .o10,
+  .row > .o11 {
+    margin-left: 0;
+  }
+  main .fix,
+  .content .fix {
+    position: relative;
+  }
+  h1 {
+    font-size: 3.4em;
+  }
+  h2 {
+    font-size: 2.8em;
+  }
+  h3 {
+    font-size: 2.2em;
+  }
+  h4 {
+    font-size: 1.6em;
+  }
+  h5 {
+    font-size: 1.4em;
+  }
+  h6 {
+    font-size: 1.2em;
+  }
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+  }
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  tr {
+    border: 1px solid #979797;
+  }
+  tr:nth-of-type(odd) {
+    background: #f9f9f9;
+  }
+  td {
+    border: none;
+    border-bottom: 1px solid #979797;
+    position: relative;
+    padding-left: 50%;
+    white-space: normal;
+    text-align: left;
+  }
+  td:before {
+    content: attr(data-title);
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+    text-align: left;
+    font-weight: bold;
+  }
+}
+
+

@@ -58,4 +58,6 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'selenium-webdriver'
   gem 'pry'
+  gem 'terminal-notifier-guard'
+  gem 'guard-rspec'
 end
