@@ -44,7 +44,7 @@ describe ResponsesController do
       it "redirects to game over page" do
         session[:question_number] = 2
         get 'new'
-        expect(response).to render_template("games/game_over")
+        assert_redirected_to game_over_path
       end
     end
 

@@ -30,4 +30,11 @@ describe GamesController do
     end
   end
 
+  describe "GET 'game_over" do
+    it "renders the game_over page" do
+      get 'game_over'
+      assert_template 'games/game_over'
+    end
+  end
+
 end

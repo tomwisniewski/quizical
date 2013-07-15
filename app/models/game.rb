@@ -7,5 +7,7 @@ class Game < ActiveRecord::Base
     self.question_limit > question_number
   end
 
+  def game_over
+  end
 
 end

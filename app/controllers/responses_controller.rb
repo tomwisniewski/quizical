@@ -12,15 +12,15 @@ class ResponsesController < ApplicationController
 
   def new
     @question_number = session[:question_number] || 0
-    @game = Game.find(session[:game_id])
-    if @question_number < @game.question_limit 
+    @game = Game.find(session[:game_id]) if session[:game_id]
+    if @game && @question_number < @game.question_limit 
       @question_number += 1
       session[:question_number] = @question_number
       @question = Question.pick
     else
       session[:game_id] = nil
       session[:question_number] = nil
-      render "games/game_over"
+      redirect_to game_over_path
     end    
   end
 
