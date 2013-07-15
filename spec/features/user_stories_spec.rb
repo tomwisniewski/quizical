@@ -294,11 +294,11 @@ feature "Logged in user can play a new game" do
 
     click_button "Start Game"
     expect(page).to have_content("Question 1")
-    choose "False"
+    choose "True"
     click_button "Submit"
 
     expect(page).to have_content("Question 2")
-    choose "False"
+    choose "True"
     click_button "Submit"
 
     expect(page).to have_content("Game Over")
@@ -316,7 +316,7 @@ feature "Logged in user can play a new game" do
     click_button "Submit"
 
     click_link "New Game"
-    
+
     fill_in "Question Limit", :with => "2"
     page.select("General", :from => 'game_question_category')
 

@@ -3,20 +3,31 @@ require 'spec_helper'
 describe ResponsesController do
 
   before(:each) do
-    @game = Game.create(:user_id => '', :question_limit => 2, :question_category => 'General')
+    @game = Game.create(:user_id => 1, :question_limit => 2, :question_category => 'General')
     session[:user_id] = 1
     session[:game_id] = @game.id
   end
 
-  describe "GET 'create'" do
+  describe "POST 'create'" do
     it "redirects to a new response" do
       session[:question_number] = 0
-      get 'create', :game_id => @game.id, :response => {:value => true, :question_id => 1}
+      post 'create', :game_id => @game.id, :response => {:value => true, :question_id => 1}
       response = assigns(:response)
       expect(response.value).to eql true
       expect(response.question_id).to eql 1
       expect(response.game_id).to eql @game.id
       assert_redirected_to new_response_path
+    end
+
+    context "question limit is reached" do
+
+      it "redirects to game over page" do
+        expect(Response.all.count).to eql 0
+        post 'create', :game_id => @game.id, :response => {:value => true, :question_id => 1}
+        post 'create', :game_id => @game.id, :response => {:value => true, :question_id => 1}
+        post 'create', :game_id => @game.id, :response => {:value => true, :question_id => 1}
+        expect(Response.all.count).to eql 2
+      end
     end
 
   end
