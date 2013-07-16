@@ -1,7 +1,7 @@
 
 <h2>Leaderboard</h2>
 
-<table>
+<table class="table">
 <thead>
   <tr>
     <th>Username</th>
@@ -20,8 +20,12 @@
         <td><%= user.created_at.strftime('%d-%m-%Y %H:%M') %></td>
         <td><%= "?" %></td>
         <td><%= "?" %></td>
-        <td><%= link_to "Edit", edit_user_path(user) %></td>
-        <td><%= link_to "Delete", user, method: :delete  %>  </td>
+        <% if session[:user_id] == user.id %>
+        <td><%= link_to "Edit", edit_user_path(user), class: "btn btn-mini btn-info pull-right" %></td>
+        <td><%= link_to "Delete", user, method: :delete, class: "btn btn-mini btn-danger pull-right"  %>  </td>
+        <% else %>
+          <td></td><td></td>
+        <% end %>
       </tr>
     <% end %>
   <% end %>

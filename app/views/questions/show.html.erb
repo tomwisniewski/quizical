@@ -1,7 +1,7 @@
+<div class="row span4 offset4">
+  <h1>Question <%= @q.id  %></h1>
 
-<h1>Question <%= @q.id  %></h1>
-
-  <%= link_to "Add a new question", new_question_url, class: "button" %>
+  <%= link_to "Add a new question", new_question_url, class: "btn btn-mini btn-success pull-right" %>
   </br>
   </br>
 
@@ -11,3 +11,4 @@
     Answer: <%= @q.answer %>
     </hr>
   </div>
+</div>
