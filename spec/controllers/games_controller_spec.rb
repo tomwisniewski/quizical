@@ -20,6 +20,9 @@ describe GamesController do
 
   describe "POST 'create'" do
     it "returns http success" do
+      Question.create(:user_id => 1, :category => 'General', :text => 'Some text', :answer => false)
+      Question.create(:user_id => 1, :category => 'General', :text => 'Some text', :answer => false)
+      session[:user_id] = 2
       expect(Game.all.count).to eql 0
       session[:game_id] = 2
       post 'create', :game => {:question_limit => 2, :question_category => "General"}

@@ -3,7 +3,7 @@
 
 <%= form_for @game do |f| %>
 <%= f.label(:question_limit, "Question Limit") %>
-<%= f.number_field(:question_limit, :min => "1", :max => "5") %>
+<%= f.number_field(:question_limit, :min => "1", :max => "5", :value => "1") %>
 <%= f.label(:question_category, "Question Category") %>
 <%= f.select(:question_category, 
       options_for_select(

@@ -283,7 +283,26 @@ feature "Logged in user can play a new game" do
     fill_in "Category", :with => "General"
     click_button "Submit"
 
+    click_link 'Log Out'
+    
+    within '#signup' do
+      fill_in 'Username', :with => "NeilWoosy"
+      fill_in 'Email', :with => "neil@gmail.com"
+      fill_in 'Password', :with => "Password"
+      fill_in 'Password Confirmation', :with => "Password"
+      click_button 'Submit'
+    end
+
+    click_link "My Questions"
+
+    click_link "Add a new question"
+    fill_in "Question Statement", :with => "Select true or false q4"
+    choose "True"
+    fill_in "Category", :with => "General"
+    click_button "Submit"
+    
     visit '/'
+
   end
   
   scenario "with two questions" do
@@ -305,6 +324,16 @@ feature "Logged in user can play a new game" do
 
   end
 
+  scenario "with more questions than are available for the user" do
+    click_link "New Game"
+    
+    fill_in "Question Limit", :with => "4"
+    page.select("General", :from => 'game_question_category')
+
+    click_button "Start Game"
+    expect(page).to have_content("There are only currently 2 questions of the chosen category available. Please choose a lower question limit.")
+  end
+
   scenario "having already played a previous game" do
     click_link "New Game"
     
@@ -323,4 +352,6 @@ feature "Logged in user can play a new game" do
     click_button "Start Game"
     expect(page).to have_content("Question 1")
   end
+
+
 end
