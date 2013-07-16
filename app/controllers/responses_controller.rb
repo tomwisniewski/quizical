@@ -11,8 +11,6 @@ class ResponsesController < ApplicationController
   end
 
   def new
-    
-
     @question_number = session[:question_number] || 0
     @game = Game.find(session[:game_id]) if session[:game_id]
     if @game && @question_number < @game.question_limit 

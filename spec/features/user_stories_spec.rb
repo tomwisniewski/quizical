@@ -296,7 +296,7 @@ feature "Logged in user can play a new game" do
     click_link "My Questions"
 
     click_link "Add a new question"
-    fill_in "Question Statement", :with => "Select true or false q4"
+    fill_in "Question Statement", :with => "Logged in user's question q4"
     choose "True"
     fill_in "Category", :with => "General"
     click_button "Submit"
@@ -332,6 +332,25 @@ feature "Logged in user can play a new game" do
 
     click_button "Start Game"
     expect(page).to have_content("There are only currently 2 questions of the chosen category available. Please choose a lower question limit.")
+  end
+
+  scenario "without being presented with one of their own questions" do
+    click_link "New Game"
+    
+    fill_in "Question Limit", :with => "2"
+    page.select("General", :from => 'game_question_category')
+
+    click_button "Start Game"
+
+    expect(page).to_not have_content("Logged in user's question q4")
+    choose "True"
+    click_button "Submit"
+
+    expect(page).to_not have_content("Logged in user's question q4")
+    choose "True"
+    click_button "Submit"
+
+    expect(page).to have_content("Game Over")
   end
 
   scenario "having already played a previous game" do
