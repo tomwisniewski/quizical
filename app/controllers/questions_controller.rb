@@ -15,16 +15,16 @@ class QuestionsController < ApplicationController
     q.answer = params[:question][:answer]
     q.category = params[:question][:category]
     if q.save
-      redirect_to questions_url
+      redirect_to questions_path
     else
       redirect_to "#", notice: q.errors.full_messages
     end
   end
 
   def show
-    @q= Question.find_by(:user_id => session[:user_id], :id => params[:id])
+    @q = Question.find_by(:user_id => session[:user_id], :id => params[:id])
     if @q.nil?
-      redirect_to questions_url, notice: "There was a problem with that question. Here are all your questions"  
+      redirect_to questions_path, notice: "There was a problem with that question. Here are all your questions"  
     end
   end
 

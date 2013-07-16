@@ -1,12 +1,12 @@
-<h1>Question <%= @q.id  %></h1>
+<h1>Question <%= @question.id  %></h1>
+<p>Questions added by you are only presented in games played by other people.</p>
+<%= link_to "Add a new question", new_question_path, class: "button" %>
+</br>
+</br>
 
-  <%= link_to "Add a new question", new_question_url, class: "button" %>
+<div id=<%= @question.id.to_s %> class="question">
+  Question: <%= @question.text %>
   </br>
-  </br>
-
-  <div id=<%= @q.id.to_s %> class="question">
-    Question: <%= @q.text %>
-    </br>
-    Answer: <%= @q.answer %>
-    </hr>
-  </div>
+  Answer: <%= @question.answer %>
+  </hr>
+</div>

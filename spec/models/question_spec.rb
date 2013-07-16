@@ -30,8 +30,9 @@ describe Question do
   end
 
   it 'should not be possible to add a question with a string answer' do
-    question = Question.new(user_id: 1, category: "General", text: "A morbier is a type of cheese", answer: "true")
-    question.valid?.should be false
+    question = Question.new(user_id: 1, category: "General", text: "A morbier is a type of cheese", answer: "hello")
+    question.answer.should be false
+    question.valid?.should be true
   end
 
   describe "question list generation" do
