@@ -1,27 +1,38 @@
 
-<div>
-  <p class="label">Username:</p>
-  <span><%= @user.username %></span>
-</div>
-<div>
-  <p class="label">Email:</p>
-  <span><%= @user.email %></span>
-</div>
-<div>
-  <p class="label">Created at:</p>
-  <span><%= @user.created_at %></span>
-</div>
-<div>
-  <p class="label">Updated at:</p>
-  <span><%= @user.updated_at %></span>
-</div>
-<div>
-  <p class="label">Games played:</p>
-  <span><%= "?" %></span>
-</div>
-<div>
-  <p class="label">Correct answers:</p>
-  <span><%= "?" %></span>
+<div class="row span6 offset3">
+
+
+ <table class="table">
+  <tbody>
+    <tr>
+      <td>Username: </td>
+      <td><%= @user.username %></td>
+    </tr>
+    <tr>
+      <td>Email address: </td>
+      <td><%= @user.email %></td>
+    </tr>
+    <tr>
+        <td>Date joined: </td>
+      <td><%= @user.created_at.strftime('%d-%m-%Y %H:%M') %></td>
+    </tr>
+    <tr>
+        <td>Games played: </td>
+      <td> </td>
+    </tr>
+    <tr>
+        <td>Correct answers: </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <%= link_to 'Edit My Details', edit_user_path(@user), class: "btn btn-mini btn-info pull-right" %>
+      </td>
+    </tr>
+  </tbody>
+</table>
 </div>
 
-<%= link_to 'Edit My Details', edit_user_path(@user) %>
+
+
+

@@ -1,6 +1,6 @@
 <h1>Your Questions</h1>
 
-<%= link_to "Add a new question", new_question_url, class: "button" %>
+ <%= link_to "Add a new question", new_question_url, class: "btn btn-mini btn-success" %>
 </br>
 </br>
 <% if @questions == nil %>
@@ -11,7 +11,7 @@
       Question: <%= q.text %>
       </br>
       Answer: <%= q.answer %>
-      <%= link_to "delete", q, method: :delete, class: "button" %>
+      <%= link_to "delete", q, method: :delete, class: "btn btn-mini btn-danger" %>
       </hr>
     </div>
   <% end %>

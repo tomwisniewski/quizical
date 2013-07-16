@@ -9,27 +9,9 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
+ *= require bootstrap.css
  *= require_tree .
+ *= require bootstrap-responsive.css
+ *= require bootstrap-overrides.css
  */
-/**
- * Zimit.less
- *
- * Final less to css compile file.
- *
- * @project Zimit Framework
- * @version 0.9.8
- * @author Jorge Garrido Oval, firezenk@gmail.com
- * @copyright 2012
- * @license MIT
- */
-/**
- * Fonts.less
- *
- * Font definition for all styled texts.
- *
- * @project Zimit Framework
- * @version 0.9.8
- * @author Jorge Garrido Oval, firezenk@gmail.com
- * @copyright 2012
- * @license MIT
- */
+

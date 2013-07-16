@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <h1>Question <%= @question.id  %></h1>
 <p>Questions added by you are only presented in games played by other people.</p>
 <%= link_to "Add a new question", new_question_path, class: "button" %>
@@ -10,3 +11,19 @@
   Answer: <%= @question.answer %>
   </hr>
 </div>
+=======
+<div class="row span4 offset4">
+  <h1>Question <%= @q.id  %></h1>
+
+  <%= link_to "Add a new question", new_question_url, class: "btn btn-mini btn-success pull-right" %>
+  </br>
+  </br>
+
+  <div id=<%= @q.id.to_s %> class="question">
+    Question: <%= @q.text %>
+    </br>
+    Answer: <%= @q.answer %>
+    </hr>
+  </div>
+</div>
+>>>>>>> 16e3288cf40e33f3fe95f7452dbbfe3a5efe967a

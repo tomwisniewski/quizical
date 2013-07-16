@@ -2,36 +2,44 @@
 <html>
 <head>
   <title>Quizical</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <nav>
-    <% if session[:user_id] %>
-    <% @user = User.find(session[:user_id]) %>
-      <li><%= link_to 'Log Out', logout_path, :method => :delete %></li>
-      <li><%= link_to 'My Profile', user_path(@user) %></li>
-      <li><%= link_to 'My Questions', questions_path %></li> 
-      <li><%= link_to 'New Game', new_game_path %></li>
-      <li><%= link_to 'Leaderboard', users_path %></li> 
-    <% else %>
-      <li><%= link_to 'Log In', new_session_path %></li> 
+  <div class="navbar">
+    <div class="navbar-inner">
+      <a class="brand" href="#">Quizical</a>
+        <% if session[:user_id].nil?%>
+        <ul class="nav">
+          <li><%= link_to 'Sign Up', new_user_path %></li> 
+          <li><%= link_to 'Log In', new_session_path %></li>
+        </ul>
+        <% else %>
+        <ul class="nav">
+          <% @user = User.find(session[:user_id]) %>
+          <li><%= link_to 'Log Out', logout_path, :method => :delete %></li>
+          <li><%= link_to 'My Profile', user_path(@user) %></li>
+          <li><%= link_to 'My Questions', questions_path %></li>
+          <li class="divider"></li> 
+          <li><%= link_to 'New Game', new_game_path %></li>
+          <li><%= link_to 'Leaderboard', users_path %></li> 
+        </ul>
+        <% end %>
+      </div>
+    </div>
 
-    <% end %>
-
-
-  </nav>
   <div id="flash-messages">
     <% if flash[:error] %>
-        <p class='error'><%= flash[:error] %></p>
+        <div class='alert alert-block'><%= flash[:error] %></div>
     <% end %>
     <% if flash[:notice] %>
-        <p class='notice'><%= flash[:notice] %></p>
+        <div class='alert alert-block'><%= flash[:notice] %></div>
     <% end %>
   </div>
-
-<%= yield %>
-
+  <div class="container-fluid">
+    <%= yield %>
+  </div>
 </body>
 </html>
