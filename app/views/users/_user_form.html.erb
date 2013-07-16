@@ -1,4 +1,4 @@
- <%= form_for(@user, :html => { :id => "signup" }) do |f|  %>
+ <%= form_for(@user, :html => { :id => "signup", :class => "form-signin"}) do |f|  %>
 
   <%= render 'error_messages', object: @user %> 
   <%= f.label(:username, 'Username', :class => "label_width")%>
