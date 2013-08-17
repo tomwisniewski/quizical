@@ -177,8 +177,7 @@ feature "User can view their details" do
   scenario "when logged in" do
     expect(page).to have_content("TomWissy")
     expect(page).to have_content("tom@gmail.com")
-    expect(page).to have_content("Created at")
-    expect(page).to have_content("Updated at")
+    expect(page).to have_content("Date joined")
     expect(page).to have_content("Games played")
     expect(page).to have_content("Correct answers")
   end  
