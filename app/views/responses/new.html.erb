@@ -1,8 +1,10 @@
-<h1>Responses#new</h1>
-
-<!-- @game
-@question
-@question_number -->
+<% if @question_errors.count > 0 %>
+  <ul>
+  <% @question_errors.each do |error| %>
+    <li><%= error %></li>
+  <% end %>
+  </ul>
+<% end %>
 
 <h2>Question <%= @question_number %></h2>
 <p><%= @question.text %></p>
@@ -12,6 +14,8 @@
   
   <%= form_for :response, :url => responses_path do |f| %>
     <fieldset>
+      <%= f.hidden_field :question_id, :value => @question.id %>
+
       <%= f.label(:answer_true, "True") %>
       <%= radio_button(:response, "answer", true) %>
       

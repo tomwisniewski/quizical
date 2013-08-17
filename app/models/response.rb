@@ -2,7 +2,7 @@ class Response < ActiveRecord::Base
   belongs_to :question
   belongs_to :game, inverse_of: :responses
   validates_presence_of :question_id, :game_id
-  validates :value, :inclusion => {:in => [true, false]}
+  validate :value, :in => [true, false], :message => "response answer must be true or false"
   validate :game_still_active?
 
   def game_still_active?

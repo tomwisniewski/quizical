@@ -1,3 +1,17 @@
+<<<<<<< HEAD
+<h1>Question <%= @question.id  %></h1>
+<p>Questions added by you are only presented in games played by other people.</p>
+<%= link_to "Add a new question", new_question_path, class: "button" %>
+</br>
+</br>
+
+<div id=<%= @question.id.to_s %> class="question">
+  Question: <%= @question.text %>
+  </br>
+  Answer: <%= @question.answer %>
+  </hr>
+</div>
+=======
 <div class="row span4 offset4">
   <h1>Question <%= @q.id  %></h1>
 
@@ -12,3 +26,4 @@
     </hr>
   </div>
 </div>
+>>>>>>> 16e3288cf40e33f3fe95f7452dbbfe3a5efe967a
